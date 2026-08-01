@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en" class="dark scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -419,13 +419,16 @@
         </a>
 
         <!-- Desktop Navigation Links -->
-        <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-[var(--sm-text-secondary)]">
-          <a href="#product" class="hover:text-[var(--sm-accent-on-surface)] transition-colors">Product</a>
-          <a href="#pipeline" class="hover:text-[var(--sm-accent-on-surface)] transition-colors">Pipeline</a>
-          <a href="#modules" class="hover:text-[var(--sm-accent-on-surface)] transition-colors">Modules</a>
-          <a href="#finance" class="hover:text-[var(--sm-accent-on-surface)] transition-colors">Finance</a>
-          <a href="#governance" class="hover:text-[var(--sm-accent-on-surface)] transition-colors">Governance</a>
-          <a href="#contact" class="hover:text-[var(--sm-accent-on-surface)] transition-colors">Contact</a>
+        <nav class="hidden md:flex items-center text-sm font-medium text-[var(--sm-text-secondary)] relative isolate" id="desktop-nav">
+          <!-- Floating indicator background -->
+          <div id="nav-indicator" class="absolute top-1/2 left-0 h-9 -translate-y-1/2 bg-terracotta/10 border border-terracotta/20 rounded-full transition-all duration-300 ease-out opacity-0 -z-10 pointer-events-none"></div>
+          
+          <a href="#product" class="nav-link px-4 py-2 hover:text-[var(--sm-text-primary)] transition-colors" data-section="product">Product</a>
+          <a href="#pipeline" class="nav-link px-4 py-2 hover:text-[var(--sm-text-primary)] transition-colors" data-section="pipeline">Pipeline</a>
+          <a href="#modules" class="nav-link px-4 py-2 hover:text-[var(--sm-text-primary)] transition-colors" data-section="modules">Modules</a>
+          <a href="#finance" class="nav-link px-4 py-2 hover:text-[var(--sm-text-primary)] transition-colors" data-section="finance">Finance</a>
+          <a href="#governance" class="nav-link px-4 py-2 hover:text-[var(--sm-text-primary)] transition-colors" data-section="governance">Governance</a>
+          <a href="#contact" class="nav-link px-4 py-2 hover:text-[var(--sm-text-primary)] transition-colors" data-section="contact">Contact</a>
         </nav>
 
         <!-- Right Side: Theme Toggle + CTA Button -->
@@ -478,13 +481,13 @@
             </button>
           </div>
 
-          <nav class="flex flex-col gap-2 text-base font-medium text-[var(--sm-text-primary)] pt-4 border-t border-[var(--sm-border)]">
-            <a href="#product" class="mobile-nav-link py-3 min-h-[44px] flex items-center border-b border-[var(--sm-border)]/50">Product</a>
-            <a href="#pipeline" class="mobile-nav-link py-3 min-h-[44px] flex items-center border-b border-[var(--sm-border)]/50">Pipeline</a>
-            <a href="#modules" class="mobile-nav-link py-3 min-h-[44px] flex items-center border-b border-[var(--sm-border)]/50">Modules</a>
-            <a href="#finance" class="mobile-nav-link py-3 min-h-[44px] flex items-center border-b border-[var(--sm-border)]/50">Finance</a>
-            <a href="#governance" class="mobile-nav-link py-3 min-h-[44px] flex items-center border-b border-[var(--sm-border)]/50">Governance</a>
-            <a href="#contact" class="mobile-nav-link py-3 min-h-[44px] flex items-center border-b border-[var(--sm-border)]/50">Contact</a>
+          <nav class="flex flex-col text-base font-medium text-[var(--sm-text-primary)] pt-4 border-t border-[var(--sm-border)] relative" id="mobile-nav">
+            <a href="#product" class="mobile-nav-link px-4 py-3 min-h-[44px] flex items-center border-b border-[var(--sm-border)]/50 transition-colors" data-section="product">Product</a>
+            <a href="#pipeline" class="mobile-nav-link px-4 py-3 min-h-[44px] flex items-center border-b border-[var(--sm-border)]/50 transition-colors" data-section="pipeline">Pipeline</a>
+            <a href="#modules" class="mobile-nav-link px-4 py-3 min-h-[44px] flex items-center border-b border-[var(--sm-border)]/50 transition-colors" data-section="modules">Modules</a>
+            <a href="#finance" class="mobile-nav-link px-4 py-3 min-h-[44px] flex items-center border-b border-[var(--sm-border)]/50 transition-colors" data-section="finance">Finance</a>
+            <a href="#governance" class="mobile-nav-link px-4 py-3 min-h-[44px] flex items-center border-b border-[var(--sm-border)]/50 transition-colors" data-section="governance">Governance</a>
+            <a href="#contact" class="mobile-nav-link px-4 py-3 min-h-[44px] flex items-center border-b border-[var(--sm-border)]/50 transition-colors" data-section="contact">Contact</a>
           </nav>
         </div>
 
@@ -1600,7 +1603,7 @@
 
 
     <!-- 10. FOOTER (ALWAYS DARK) -->
-    <footer class="bg-[#0F0F12] text-[#FAFAFA] border-t border-white/10 pt-16 pb-12">
+    <footer id="contact" class="bg-[#0F0F12] text-[#FAFAFA] border-t border-white/10 pt-16 pb-12">
       <div class="max-w-7xl mx-auto px-4 sm:px-8">
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
@@ -2015,6 +2018,84 @@
         }, { threshold: 0.2 });
 
         observer.observe(financeSection);
+      })();
+      // 9. Magnificent Scrollspy for Navigation
+      (function setupScrollSpy() {
+        const sections = document.querySelectorAll('section[id], footer[id]');
+        const desktopLinks = document.querySelectorAll('#desktop-nav .nav-link');
+        const mobileLinks = document.querySelectorAll('#mobile-nav .mobile-nav-link');
+        const indicator = document.getElementById('nav-indicator');
+        const desktopNav = document.getElementById('desktop-nav');
+        
+        if (!desktopNav || sections.length === 0) return;
+
+        const observerOptions = {
+          root: null,
+          rootMargin: '-10% 0px -75% 0px',
+          threshold: 0
+        };
+
+        let currentActiveId = '';
+
+        const setActiveLink = (id) => {
+          if (currentActiveId === id) return;
+          currentActiveId = id;
+          
+          let activeLinkFound = false;
+
+          desktopLinks.forEach(link => {
+            if (link.getAttribute('data-section') === id) {
+              activeLinkFound = true;
+              link.classList.add('text-[var(--sm-terracotta)]', 'font-semibold');
+              link.classList.remove('text-[var(--sm-text-secondary)]');
+              
+              if (indicator) {
+                const linkRect = link.getBoundingClientRect();
+                const navRect = desktopNav.getBoundingClientRect();
+                
+                indicator.style.width = `${linkRect.width}px`;
+                indicator.style.transform = `translate(${linkRect.left - navRect.left}px, -50%)`;
+                indicator.style.opacity = '1';
+              }
+            } else {
+              link.classList.remove('text-[var(--sm-terracotta)]', 'font-semibold');
+              link.classList.add('text-[var(--sm-text-secondary)]');
+            }
+          });
+
+          if (!activeLinkFound && indicator) {
+             indicator.style.opacity = '0';
+          }
+
+          mobileLinks.forEach(link => {
+            if (link.getAttribute('data-section') === id) {
+              link.classList.add('text-[var(--sm-terracotta)]', 'bg-[var(--sm-terracotta)]/5', 'rounded-lg');
+            } else {
+              link.classList.remove('text-[var(--sm-terracotta)]', 'bg-[var(--sm-terracotta)]/5', 'rounded-lg');
+            }
+          });
+        };
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              setActiveLink(entry.target.id);
+            }
+          });
+        }, observerOptions);
+
+        sections.forEach(section => {
+          sectionObserver.observe(section);
+        });
+        
+        // Handle window resize to realign indicator
+        window.addEventListener('resize', () => {
+          if (currentActiveId) {
+            const tempId = currentActiveId;
+            currentActiveId = ''; 
+            setActiveLink(tempId);
+          }
+        });
       })();
     </script>
   </body>
