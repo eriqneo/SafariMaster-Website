@@ -1,0 +1,1997 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SafariMaster - Tour Operations Software For Safari Companies</title>
+    <meta name="description" content="SafariMaster is a premium SaaS platform for safari and tour operators to manage quotes, invoices, reservations, vouchers, payments, receipts, vendors, support tickets, and profit analysis in one workspace." />
+    <meta name="keywords" content="safari management software, tour operations software, travel agency management system, destination management company software, quote and invoice software for tour operators, safari booking operations platform, DMC operations software" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://safarimaster.io/" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SafariMaster - Tour Operations Software For Safari Companies" />
+    <meta property="og:description" content="SafariMaster is a premium SaaS platform for safari and tour operators to manage quotes, invoices, reservations, vouchers, payments, receipts, vendors, support tickets, and profit analysis in one workspace." />
+    <meta property="og:url" content="https://safarimaster.io/" />
+    <meta property="og:site_name" content="SafariMaster" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SafariMaster - Tour Operations Software For Safari Companies" />
+    <meta name="twitter:description" content="SafariMaster is a premium SaaS platform for safari and tour operators to manage quotes, invoices, reservations, vouchers, payments, receipts, vendors, support tickets, and profit analysis in one workspace." />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "SafariMaster",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web-based",
+      "description": "SafariMaster is a premium SaaS platform for safari and tour operators to manage quotes, invoices, reservations, vouchers, payments, receipts, vendors, support tickets, and profit analysis in one workspace.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <!-- Google Fonts: Inter & Inter Tight -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Theme Initialization Script (Before Tailwind loads, avoids FOUC) -->
+    <script>
+      (function() {
+        const savedTheme = localStorage.getItem('sm-theme');
+        if (savedTheme === 'light') {
+          document.documentElement.classList.add('light');
+          document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        }
+      })();
+    </script>
+
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Design Tokens & Tailwind Config -->
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              terracotta: {
+                DEFAULT: 'var(--sm-terracotta)',
+                hover: 'var(--sm-terracotta-hover)',
+                glow: 'var(--sm-terracotta-glow)',
+                soft: 'rgba(217, 107, 67, 0.15)',
+              },
+              'sm-accent': 'var(--sm-accent)',
+              'sm-accent-on-surface': 'var(--sm-accent-on-surface)',
+              'sm-bg': 'var(--sm-bg)',
+              'sm-bg-alt': 'var(--sm-bg-alt)',
+              'sm-surface': 'var(--sm-surface)',
+              'sm-surface-raised': 'var(--sm-surface-raised)',
+              'sm-border': 'var(--sm-border)',
+              'sm-border-hover': 'var(--sm-border-hover)',
+              'sm-text-primary': 'var(--sm-text-primary)',
+              'sm-text-secondary': 'var(--sm-text-secondary)',
+              'sm-text-muted': 'var(--sm-text-muted)',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Inter Tight', 'Inter', 'sans-serif'],
+            },
+            borderRadius: {
+              'btn': '14px',
+              'card': '18px',
+            },
+            boxShadow: {
+              'sm-card': 'var(--sm-card-shadow)',
+              'sm-glow': 'var(--sm-glow)',
+              'sm-glow-soft': 'var(--sm-glow-soft)',
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      :root {
+        --sm-bg: #0C0C0E;
+        --sm-bg-alt: #121215;
+        --sm-surface: #151518;
+        --sm-surface-raised: #1C1C22;
+        --sm-border: rgba(255, 255, 255, 0.08);
+        --sm-border-hover: rgba(210, 91, 39, 0.4);
+        --sm-text-primary: #F4F4F5;
+        --sm-text-secondary: #A1A1AA;
+        --sm-text-muted: #71717A;
+        --sm-terracotta: #D25B27;
+        --sm-terracotta-hover: #E36733;
+        --sm-terracotta-glow: rgba(210, 91, 39, 0.4);
+        --sm-glow: 0 0 20px rgba(210, 91, 39, 0.4);
+        --sm-glow-soft: 0 0 15px rgba(210, 91, 39, 0.2);
+        --sm-card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+        --sm-accent: #D25B27;
+        --sm-accent-on-surface: #EE7442;
+      }
+
+      html.light {
+        --sm-bg: #F5F5F7;
+        --sm-bg-alt: #EBEBEF;
+        --sm-surface: #FFFFFF;
+        --sm-surface-raised: #F0F0F3;
+        --sm-border: rgba(0, 0, 0, 0.08);
+        --sm-border-hover: rgba(210, 91, 39, 0.4);
+        --sm-text-primary: #1C1C1E;
+        --sm-text-secondary: #52525B;
+        --sm-text-muted: #71717A;
+        --sm-terracotta: #D25B27;
+        --sm-terracotta-hover: #C04E1D;
+        --sm-terracotta-glow: rgba(210, 91, 39, 0.25);
+        --sm-glow: 0 0 20px rgba(210, 91, 39, 0.25);
+        --sm-glow-soft: 0 0 12px rgba(210, 91, 39, 0.15);
+        --sm-card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        --sm-accent: #D25B27;
+        --sm-accent-on-surface: #C04E1D;
+      }
+
+      html {
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      ::selection {
+        background: rgba(210, 91, 39, 0.25);
+        color: inherit;
+      }
+
+      body {
+        background-color: var(--sm-bg);
+        color: var(--sm-text-primary);
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
+      }
+
+      /* Reusable Premium Typography Classes */
+      .eyebrow {
+        font-size: 0.8125rem; /* 13px */
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--sm-accent-on-surface);
+      }
+
+      .h1-display {
+        font-family: 'Inter Tight', 'Inter', sans-serif;
+        font-size: clamp(2.5rem, 5vw + 1rem, 5rem);
+        font-weight: 700;
+        line-height: 1.05;
+      }
+
+      .h2-display {
+        font-family: 'Inter Tight', 'Inter', sans-serif;
+        font-size: clamp(2rem, 3vw + 1rem, 3rem);
+        font-weight: 700;
+        line-height: 1.15;
+      }
+
+      .h3-heading {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.375rem; /* 22px */
+        font-weight: 600;
+        line-height: 1.3;
+      }
+
+      .body-lg {
+        font-size: 1.125rem; /* 18px */
+        font-weight: 400;
+        line-height: 1.65;
+        color: var(--sm-text-secondary);
+        max-width: 60ch;
+      }
+
+      .body-base {
+        font-size: 1rem; /* 16px */
+        font-weight: 400;
+        line-height: 1.65;
+      }
+
+      .stat-number {
+        font-variant-numeric: tabular-nums;
+        font-weight: 700;
+      }
+
+      /* Transitions for smooth theme toggle */
+      .theme-transition {
+        transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+      }
+
+      /* Theme Toggle Sun/Moon Icon Cross-fade & 200ms Rotation */
+      .theme-toggle-icon {
+        transition: opacity 200ms ease, transform 200ms ease;
+      }
+
+      html.dark .icon-sun {
+        opacity: 0;
+        transform: rotate(-90deg) scale(0.6);
+        pointer-events: none;
+        position: absolute;
+      }
+      html.dark .icon-moon {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+        position: relative;
+      }
+
+      html.light .icon-sun {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+        position: relative;
+      }
+      html.light .icon-moon {
+        opacity: 0;
+        transform: rotate(90deg) scale(0.6);
+        pointer-events: none;
+        position: absolute;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, ::before, ::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+        .float-tile-1, .float-tile-2, .float-tile-3, .float-tile-4, .float-tile-5,
+        .dot-pulse, .traveling-dot, .theme-toggle-icon, #reconcile-ring, #pipeline-svg-line {
+          animation: none !important;
+          transform: none !important;
+          transition: none !important;
+        }
+      }
+
+      /* Refined Floating Tile Animations (4s to 6.5s per tile, varied timing & rotation) */
+      @keyframes idleFloat1 {
+        0%, 100% { transform: translate3d(var(--px, 0px), var(--py, 0px), 0) rotate(-6deg); }
+        50% { transform: translate3d(var(--px, 0px), calc(var(--py, 0px) - 7px), 0) rotate(-5deg); }
+      }
+      @keyframes idleFloat2 {
+        0%, 100% { transform: translate3d(var(--px, 0px), var(--py, 0px), 0) rotate(5deg); }
+        50% { transform: translate3d(var(--px, 0px), calc(var(--py, 0px) - 11px), 0) rotate(3deg); }
+      }
+      @keyframes idleFloat3 {
+        0%, 100% { transform: translate3d(var(--px, 0px), var(--py, 0px), 0) rotate(-2deg); }
+        50% { transform: translate3d(var(--px, 0px), calc(var(--py, 0px) - 9px), 0) rotate(-4deg); }
+      }
+      @keyframes idleFloat4 {
+        0%, 100% { transform: translate3d(var(--px, 0px), var(--py, 0px), 0) rotate(7deg); }
+        50% { transform: translate3d(var(--px, 0px), calc(var(--py, 0px) - 10px), 0) rotate(8deg); }
+      }
+      @keyframes idleFloat5 {
+        0%, 100% { transform: translate3d(var(--px, 0px), var(--py, 0px), 0) rotate(-5deg); }
+        50% { transform: translate3d(var(--px, 0px), calc(var(--py, 0px) - 8px), 0) rotate(-3deg); }
+      }
+
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.4; transform: scale(1.3); }
+      }
+
+      @keyframes travelDot {
+        0% { left: 0%; opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { left: 100%; opacity: 0; }
+      }
+
+      .float-tile-1 { animation: idleFloat1 5.2s ease-in-out infinite; }
+      .float-tile-2 { animation: idleFloat2 4.1s ease-in-out 0.6s infinite; }
+      .float-tile-3 { animation: idleFloat3 6.4s ease-in-out 1.2s infinite; }
+      .float-tile-4 { animation: idleFloat4 4.8s ease-in-out 0.3s infinite; }
+      .float-tile-5 { animation: idleFloat5 5.8s ease-in-out 0.9s infinite; }
+      
+      .dot-pulse { animation: pulseGlow 2s infinite; }
+      .traveling-dot { animation: travelDot 4s linear infinite; }
+
+      .feature-blob {
+        opacity: 0.65;
+        transition: opacity 200ms ease;
+      }
+      html.light .feature-blob {
+        opacity: 0.18;
+      }
+
+      /* Custom Glassmorphism */
+      .glass-panel {
+        background: var(--sm-surface);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--sm-border);
+      }
+
+      .glass-panel-raised {
+        background: var(--sm-surface-raised);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--sm-border);
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--sm-bg);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--sm-border);
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--sm-terracotta);
+      }
+
+      /* Focus Ring Accessibility */
+      *:focus-visible {
+        outline: 2px solid var(--sm-terracotta) !important;
+        outline-offset: 2px !important;
+      }
+
+      /* Screen Reader Utility for Skip Link */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+      .sr-only:focus, .focus\:not-sr-only:focus {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 9999;
+        width: auto;
+        height: auto;
+        padding: 0.75rem 1.25rem;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+        background-color: var(--sm-terracotta);
+        color: #ffffff;
+        border-radius: 0.75rem;
+        font-weight: 700;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body class="theme-transition antialiased">
+
+    <!-- Skip to Main Content Link for Keyboard Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only">Skip to main content</a>
+
+    <!-- 1. STICKY NAVBAR -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-4 sm:px-8">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        
+        <!-- Brand Logo & Monogram -->
+        <!-- Swap monogram for frontend/public/branding/safarimaster-logo.png if logo available -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-terracotta flex items-center justify-center text-white font-extrabold text-lg shadow-sm group-hover:scale-105 transition-transform">
+            SM
+          </div>
+          <div class="flex flex-col">
+            <span class="font-extrabold text-xl text-[var(--sm-text-primary)]">
+              Safari<span class="text-[var(--sm-accent-on-surface)]">Master</span>
+            </span>
+            <span class="text-[10px] tracking-widest text-[var(--sm-text-muted)] font-semibold uppercase -mt-1">Tour Operations Platform</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-[var(--sm-text-secondary)]">
+          <a href="#product" class="hover:text-[var(--sm-accent-on-surface)] transition-colors">Product</a>
+          <a href="#pipeline" class="hover:text-[var(--sm-accent-on-surface)] transition-colors">Pipeline</a>
+          <a href="#modules" class="hover:text-[var(--sm-accent-on-surface)] transition-colors">Modules</a>
+          <a href="#finance" class="hover:text-[var(--sm-accent-on-surface)] transition-colors">Finance</a>
+          <a href="#governance" class="hover:text-[var(--sm-accent-on-surface)] transition-colors">Governance</a>
+          <a href="#contact" class="hover:text-[var(--sm-accent-on-surface)] transition-colors">Contact</a>
+        </nav>
+
+        <!-- Right Side: Theme Toggle + CTA Button -->
+        <div class="hidden md:flex items-center gap-4">
+          
+          <!-- Light/Dark Mode Theme Toggle Pill -->
+          <button id="theme-toggle-btn" aria-label="Toggle light and dark mode" aria-pressed="false" class="relative flex items-center gap-2 p-1.5 px-3 rounded-full bg-[var(--sm-surface-raised)] border border-[var(--sm-border)] text-[var(--sm-text-secondary)] hover:text-[var(--sm-text-primary)] transition-all">
+            <div class="relative w-4 h-4 flex items-center justify-center">
+              <i data-lucide="sun" class="theme-toggle-icon icon-sun w-4 h-4 text-amber-500"></i>
+              <i data-lucide="moon" class="theme-toggle-icon icon-moon w-4 h-4 text-[var(--sm-accent-on-surface)]"></i>
+            </div>
+            <span id="theme-toggle-label" class="text-xs font-semibold select-none">Theme</span>
+          </button>
+
+          <!-- Request Demo CTA Button -->
+          <button onclick="openDemoModal()" class="px-5 py-2.5 rounded-xl bg-terracotta hover:bg-terracotta-hover text-white font-semibold text-sm shadow-sm hover:shadow-sm-glow transition-all">
+            Request Demo
+          </button>
+        </div>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <div class="flex md:hidden items-center gap-2">
+          <button id="theme-toggle-mobile" aria-label="Toggle light and dark mode" aria-pressed="false" class="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-[var(--sm-surface-raised)] border border-[var(--sm-border)] text-[var(--sm-text-secondary)]">
+            <div class="relative w-4 h-4 flex items-center justify-center">
+              <i data-lucide="sun" class="theme-toggle-icon icon-sun w-4 h-4 text-amber-500"></i>
+              <i data-lucide="moon" class="theme-toggle-icon icon-moon w-4 h-4 text-[var(--sm-accent-on-surface)]"></i>
+            </div>
+          </button>
+          <button id="mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer" class="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-[var(--sm-surface-raised)] border border-[var(--sm-border)] text-[var(--sm-text-primary)]">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- Mobile Slide-in Drawer -->
+    <div id="mobile-drawer" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-md transition-opacity">
+      <div class="fixed top-0 right-0 bottom-0 w-4/5 max-w-sm bg-[var(--sm-surface)] border-l border-[var(--sm-border)] p-6 flex flex-col justify-between shadow-2xl">
+        <div class="space-y-6">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded-lg bg-terracotta flex items-center justify-center text-white font-bold text-sm">SM</div>
+              <span class="font-extrabold text-lg text-[var(--sm-text-primary)]">SafariMaster</span>
+            </div>
+            <button id="close-drawer-btn" aria-label="Close menu" class="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-[var(--sm-text-secondary)]">
+              <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+          </div>
+
+          <nav class="flex flex-col gap-2 text-base font-medium text-[var(--sm-text-primary)] pt-4 border-t border-[var(--sm-border)]">
+            <a href="#product" class="mobile-nav-link py-3 min-h-[44px] flex items-center border-b border-[var(--sm-border)]/50">Product</a>
+            <a href="#pipeline" class="mobile-nav-link py-3 min-h-[44px] flex items-center border-b border-[var(--sm-border)]/50">Pipeline</a>
+            <a href="#modules" class="mobile-nav-link py-3 min-h-[44px] flex items-center border-b border-[var(--sm-border)]/50">Modules</a>
+            <a href="#finance" class="mobile-nav-link py-3 min-h-[44px] flex items-center border-b border-[var(--sm-border)]/50">Finance</a>
+            <a href="#governance" class="mobile-nav-link py-3 min-h-[44px] flex items-center border-b border-[var(--sm-border)]/50">Governance</a>
+            <a href="#contact" class="mobile-nav-link py-3 min-h-[44px] flex items-center border-b border-[var(--sm-border)]/50">Contact</a>
+          </nav>
+        </div>
+
+        <div class="space-y-3 pt-6 border-t border-[var(--sm-border)]">
+          <button onclick="openDemoModal()" class="w-full py-3.5 min-h-[44px] rounded-xl bg-terracotta text-white font-semibold text-center text-sm shadow-sm">
+            Request Demo
+          </button>
+          <p class="text-xs text-center text-[var(--sm-text-muted)]">Tour Operations Platform for Safari Operators & DMCs</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT LANDMARK -->
+    <main id="main-content">
+
+
+    <!-- 2. HERO SECTION -->
+    <section id="product" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+      
+      <!-- Subtle Ambient Background Glow -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-terracotta/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Hero Left Column -->
+        <div class="lg:col-span-7">
+          
+          <!-- Eyebrow Label -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-terracotta/10 border border-terracotta/20 eyebrow mb-4">
+            <i data-lucide="compass" class="w-3.5 h-3.5"></i>
+            <span>TOUR OPERATIONS PLATFORM</span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="h1-display text-[var(--sm-text-primary)] mb-6">
+            Run Every Safari Operation From Quote To Profit
+          </h1>
+
+          <!-- Exact Paragraph -->
+          <p class="body-lg max-w-[60ch] mb-6">
+            SafariMaster connects quotes, invoices, reservations, vouchers, receipts, expenses, suppliers, reminders, and profit analysis in one secure workspace built for modern tour companies.
+          </p>
+
+          <!-- Buttons Row -->
+          <div class="pt-2 flex flex-wrap items-center gap-4">
+            <button onclick="openDemoModal()" class="px-7 py-3.5 rounded-xl bg-terracotta hover:bg-terracotta-hover text-white font-bold text-base shadow-sm hover:shadow-sm-glow transition-all flex items-center gap-2 group">
+              <span>Request Demo</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </button>
+
+            <a href="#pipeline" class="px-7 py-3.5 rounded-xl bg-[var(--sm-surface-raised)] hover:bg-[var(--sm-surface)] border border-[var(--sm-border)] text-[var(--sm-text-primary)] font-semibold text-base transition-all flex items-center gap-2">
+              <i data-lucide="play-circle" class="w-4 h-4 text-[var(--sm-accent-on-surface)]"></i>
+              <span>View Product Flow</span>
+            </a>
+          </div>
+
+          <!-- Proof Line -->
+          <p class="pt-4 text-xs sm:text-sm text-[var(--sm-text-muted)] flex items-center gap-2">
+            <i data-lucide="shield-check" class="w-4 h-4 text-[var(--sm-accent-on-surface)] shrink-0"></i>
+            <span>Built for multi-company operations, role-based teams, tenant branding, and accountable financial workflows.</span>
+          </p>
+        </div>
+
+        <!-- Hero Right Column: 5 Floating Glassmorphic Module Tiles with Parallax & Depth Blur -->
+        <div id="hero-tile-container" class="lg:col-span-5 relative h-[360px] sm:h-[440px] md:h-[480px] flex items-center justify-center mt-4 lg:mt-0">
+          
+          <!-- Soft Terracotta Radial Glow Behind Tile Cluster -->
+          <div class="absolute inset-0 m-auto w-56 h-56 sm:w-80 sm:h-80 bg-terracotta/20 blur-[100px] rounded-full pointer-events-none -z-10"></div>
+
+          <!-- Live Indicator Badge Floating Top Center -->
+          <div class="absolute top-0 sm:top-2 z-20 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-[var(--sm-surface-raised)]/90 border border-[var(--sm-border)] backdrop-blur-md shadow-lg flex items-center gap-2 text-[11px] sm:text-xs font-semibold text-[var(--sm-text-primary)]">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 dot-pulse"></span>
+            <span>Live Workspace Sync</span>
+          </div>
+
+          <!-- Tile 1: Quote (FileText) - Back Layer -->
+          <div data-depth="0.05" class="hero-parallax-tile absolute top-8 left-0 sm:top-12 sm:left-6 z-10 p-3 sm:p-4 rounded-2xl bg-[var(--sm-surface-raised)]/45 backdrop-blur-sm border border-[var(--sm-border)] shadow-sm-card float-tile-1 w-36 sm:w-44 hover:scale-105 transition-transform cursor-pointer">
+            <div class="flex items-center gap-2.5 sm:gap-3">
+              <div class="p-2 sm:p-2.5 rounded-xl bg-terracotta/15 text-terracotta">
+                <i data-lucide="file-text" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+              </div>
+              <div>
+                <div class="text-[11px] sm:text-xs font-semibold text-[var(--sm-text-primary)]">Safari Quote</div>
+                <div class="text-[10px] text-emerald-500 font-medium stat-number">KES 1.45M</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tile 2: Invoice (Receipt) - Mid Layer -->
+          <div data-depth="0.09" class="hero-parallax-tile absolute top-14 right-0 sm:top-28 sm:right-4 z-20 p-3 sm:p-4 rounded-2xl bg-[var(--sm-surface-raised)]/70 backdrop-blur-md border border-[var(--sm-border)] shadow-sm-card float-tile-2 w-40 sm:w-48 hover:scale-105 transition-transform cursor-pointer">
+            <div class="flex items-center gap-2.5 sm:gap-3">
+              <div class="p-2 sm:p-2.5 rounded-xl bg-terracotta/15 text-terracotta">
+                <i data-lucide="receipt" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+              </div>
+              <div>
+                <div class="text-[11px] sm:text-xs font-semibold text-[var(--sm-text-primary)]">Tax Invoice</div>
+                <div class="text-[10px] text-[var(--sm-text-secondary)] stat-number">#INV-2026-892</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tile 3: Reservation (CalendarCheck) - Front-most Layer -->
+          <div data-depth="0.14" class="hero-parallax-tile absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 p-3.5 sm:p-5 rounded-2xl bg-[var(--sm-surface-raised)]/90 backdrop-blur-xl border border-terracotta/40 shadow-2xl float-tile-3 w-48 sm:w-56 hover:scale-105 transition-transform cursor-pointer">
+            <div class="flex items-center gap-2.5 sm:gap-3">
+              <div class="p-2.5 sm:p-3 rounded-xl bg-terracotta text-white shadow-sm">
+                <i data-lucide="calendar-check" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+              </div>
+              <div>
+                <div class="text-[11px] sm:text-xs font-bold text-[var(--sm-text-primary)]">Mara Fly-In Booking</div>
+                <div class="text-[10px] sm:text-[11px] text-terracotta font-medium">4 Guests · Confirmed</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tile 4: Voucher (Ticket) - Mid Layer -->
+          <div data-depth="0.08" class="hero-parallax-tile absolute bottom-12 left-0 sm:bottom-20 sm:left-10 z-20 p-3 sm:p-4 rounded-2xl bg-[var(--sm-surface-raised)]/70 backdrop-blur-md border border-[var(--sm-border)] shadow-sm-card float-tile-4 w-40 sm:w-48 hover:scale-105 transition-transform cursor-pointer">
+            <div class="flex items-center gap-2.5 sm:gap-3">
+              <div class="p-2 sm:p-2.5 rounded-xl bg-terracotta/15 text-terracotta">
+                <i data-lucide="ticket" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+              </div>
+              <div>
+                <div class="text-[11px] sm:text-xs font-semibold text-[var(--sm-text-primary)]">Lodge Voucher</div>
+                <div class="text-[10px] text-[var(--sm-text-muted)]">Barcoded · Ready</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tile 5: Profit (TrendingUp) - Back Layer -->
+          <div data-depth="0.04" class="hero-parallax-tile absolute bottom-2 right-0 sm:bottom-10 sm:right-8 z-10 p-3 sm:p-4 rounded-2xl bg-[var(--sm-surface-raised)]/45 backdrop-blur-sm border border-[var(--sm-border)] shadow-sm-card float-tile-5 w-36 sm:w-44 hover:scale-105 transition-transform cursor-pointer">
+            <div class="flex items-center gap-2.5 sm:gap-3">
+              <div class="p-2 sm:p-2.5 rounded-xl bg-emerald-500/15 text-emerald-500">
+                <i data-lucide="trending-up" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+              </div>
+              <div>
+                <div class="text-[11px] sm:text-xs font-semibold text-[var(--sm-text-primary)]">Trip Margin</div>
+                <div class="text-[10px] sm:text-[11px] font-bold text-emerald-500">+34.8% Net</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 3. DASHBOARD PREVIEW BANNER (ALWAYS DARK) -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-8 mb-24">
+      <div class="relative rounded-2xl bg-[#0A0A0C] border border-white/10 p-6 sm:p-8 text-white shadow-2xl overflow-hidden">
+        
+        <!-- Header Bar -->
+        <div class="flex items-center justify-between pb-6 border-b border-white/10">
+          <div class="flex items-center gap-3">
+            <div class="w-7 h-7 rounded-lg bg-terracotta flex items-center justify-center text-white font-bold text-xs">SM</div>
+            <span class="text-sm font-semibold tracking-wide text-zinc-300">SafariMaster Dashboard · Serengeti DMC HQ</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-zinc-400">Tenant: Serengeti DMC</span>
+            <div class="w-7 h-7 rounded-full bg-terracotta/30 border border-terracotta/50 flex items-center justify-center text-xs font-bold text-terracotta">
+              SD
+            </div>
+          </div>
+        </div>
+
+        <!-- Middle Row: 4 Compact Stat Cards -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-6">
+          
+          <div class="p-4 rounded-xl bg-white/[0.03] border border-white/5">
+            <div class="text-xs text-zinc-400 font-medium">Active Reservations</div>
+            <div class="text-2xl font-extrabold text-white mt-1 stat-number">24</div>
+            <div class="text-[10px] text-emerald-400 mt-1 flex items-center gap-1">
+              <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+              <span>100% Lodge Confirmed</span>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white/[0.03] border border-white/5">
+            <div class="text-xs text-zinc-400 font-medium">Pending Quotes</div>
+            <div class="text-2xl font-extrabold text-white mt-1 stat-number">9</div>
+            <div class="text-[10px] text-amber-400 mt-1 flex items-center gap-1">
+              <i data-lucide="clock" class="w-3 h-3"></i>
+              <span>3 Awaiting Client Review</span>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white/[0.03] border border-white/5">
+            <div class="text-xs text-zinc-400 font-medium">Overdue Invoices</div>
+            <div class="text-2xl font-extrabold text-white mt-1 stat-number">3</div>
+            <div class="text-[10px] text-rose-400 mt-1 flex items-center gap-1">
+              <i data-lucide="alert-circle" class="w-3 h-3"></i>
+              <span>Auto-reminders sent</span>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white/[0.03] border border-white/5">
+            <div class="text-xs text-zinc-400 font-medium">Profit This Month</div>
+            <div class="text-2xl font-extrabold text-emerald-400 mt-1 stat-number">KES 1.2M</div>
+            <div class="text-[10px] text-zinc-400 mt-1">After supplier costs</div>
+          </div>
+
+        </div>
+
+        <!-- Bottom Condensed Pipeline Strip -->
+        <div class="pt-4 border-t border-white/10">
+          <div class="text-xs font-semibold text-zinc-400 mb-3 flex items-center gap-2">
+            <span>LIVE OPERATIONAL PIPELINE TRACKER</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span>
+          </div>
+
+          <div class="relative flex items-center justify-between gap-2 overflow-x-auto py-2 no-scrollbar">
+            <!-- Connecting Line -->
+            <div class="absolute top-1/2 left-4 right-4 h-0.5 bg-gradient-to-r from-terracotta via-amber-500 to-emerald-500 -translate-y-1/2 -z-0 opacity-40"></div>
+            <div class="traveling-dot absolute top-1/2 w-4 h-4 bg-terracotta rounded-full -translate-y-1/2 blur-sm pointer-events-none"></div>
+
+            <div class="relative z-10 flex flex-col items-center min-w-[90px]">
+              <div class="w-8 h-8 rounded-full bg-terracotta text-white flex items-center justify-center text-xs font-bold shadow-lg stat-number">1</div>
+              <span class="text-xs font-medium text-zinc-200 mt-1.5">Quote</span>
+            </div>
+
+            <div class="relative z-10 flex flex-col items-center min-w-[90px]">
+              <div class="w-8 h-8 rounded-full bg-terracotta text-white flex items-center justify-center text-xs font-bold shadow-lg stat-number">2</div>
+              <span class="text-xs font-medium text-zinc-200 mt-1.5">Invoice</span>
+            </div>
+
+            <div class="relative z-10 flex flex-col items-center min-w-[90px]">
+              <div class="w-8 h-8 rounded-full bg-terracotta text-white flex items-center justify-center text-xs font-bold shadow-lg stat-number">3</div>
+              <span class="text-xs font-medium text-zinc-200 mt-1.5">Reservation</span>
+            </div>
+
+            <div class="relative z-10 flex flex-col items-center min-w-[90px]">
+              <div class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center text-xs font-bold shadow-lg stat-number">4</div>
+              <span class="text-xs font-medium text-zinc-200 mt-1.5">Voucher</span>
+            </div>
+
+            <div class="relative z-10 flex flex-col items-center min-w-[90px]">
+              <div class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center text-xs font-bold shadow-lg stat-number">5</div>
+              <span class="text-xs font-medium text-zinc-200 mt-1.5">Receipt</span>
+            </div>
+
+            <div class="relative z-10 flex flex-col items-center min-w-[90px]">
+              <div class="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold shadow-lg stat-number">6</div>
+              <span class="text-xs font-medium text-zinc-200 mt-1.5">Profit</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Overlapping Light Mini Branded Invoice Document Peeking Out (Always Light Styled) -->
+        <div class="hidden md:block absolute -bottom-6 -right-4 w-64 bg-white text-zinc-900 rounded-xl p-4 shadow-2xl border border-zinc-200 transform rotate-[-3deg] hover:rotate-0 transition-transform">
+          <div class="flex items-center justify-between pb-2 border-b border-zinc-100">
+            <span class="text-[10px] font-bold tracking-wider uppercase text-terracotta">SERENGETI DMC</span>
+            <span class="text-[9px] font-semibold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">PAID & ISSUED</span>
+          </div>
+          <div class="py-2 text-[11px] font-bold text-zinc-800 stat-number">
+            Invoice #INV-2026-081
+          </div>
+          <div class="text-[10px] text-zinc-500 flex justify-between">
+            <span>7-Day Mara Migration</span>
+            <span class="font-bold text-zinc-900 stat-number">KES 890,000</span>
+          </div>
+          <div class="mt-2 pt-2 border-t border-zinc-100 text-[9px] text-zinc-400 flex items-center justify-between">
+            <span>Voucher #VOU-991 Active</span>
+            <i data-lucide="check-circle-2" class="w-3 h-3 text-emerald-600"></i>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 4. OPERATIONS PIPELINE SECTION -->
+    <section id="pipeline" class="py-20 bg-[var(--sm-bg-alt)] border-y border-[var(--sm-border)] relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-terracotta/10 border border-terracotta/20 eyebrow mb-4">
+            OPERATIONS PIPELINE
+          </div>
+          <h2 class="h2-display text-[var(--sm-text-primary)] mb-6">
+            End-To-End Safari Operations Path
+          </h2>
+          <!-- Exact Paragraph -->
+          <p class="body-lg mx-auto max-w-[60ch]">
+            SafariMaster follows the same path your team follows: create the quote, confirm the invoice, prepare the reservation, issue vouchers, collect payments, record receipts, tag expenses, and review profit.
+          </p>
+        </div>
+
+        <!-- Flow Container -->
+        <div class="relative">
+          
+          <!-- Desktop Horizontal Connector Line SVG -->
+          <div class="hidden lg:block absolute top-[58px] left-[5%] right-[5%] h-1 pointer-events-none z-0">
+            <svg class="w-full h-2 overflow-visible" preserveAspectRatio="none" viewBox="0 0 1000 4">
+              <path id="pipeline-svg-line" d="M 0 2 L 1000 2" stroke="var(--sm-terracotta)" stroke-width="3" stroke-linecap="round" stroke-dasharray="1000" stroke-dashoffset="1000" class="transition-all duration-1000 ease-out opacity-80" />
+            </svg>
+            <!-- Traveling Glow Dot -->
+            <div id="pipeline-glow-dot" class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 bg-terracotta rounded-full shadow-[0_0_14px_#D25B27] opacity-0 pointer-events-none transition-opacity"></div>
+          </div>
+
+          <!-- Mobile Vertical Connector Line Track -->
+          <div class="lg:hidden absolute top-8 bottom-8 left-8 w-1 pointer-events-none z-0">
+            <div id="pipeline-vertical-line" class="w-full bg-terracotta opacity-80 rounded-full h-0 transition-all duration-1000 ease-out"></div>
+            <div id="pipeline-vertical-dot" class="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 bg-terracotta rounded-full shadow-[0_0_14px_#D25B27] opacity-0 pointer-events-none transition-opacity"></div>
+          </div>
+
+          <!-- Desktop Horizontal / Mobile Vertical Grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-8 gap-6 sm:gap-4 relative z-10 pl-14 lg:pl-0">
+            
+            <!-- Step 1: New Quote -->
+            <div tabindex="0" class="pipeline-step-card group relative flex flex-col items-start lg:items-center text-left lg:text-center p-4 rounded-xl bg-[var(--sm-surface)] border border-[var(--sm-border)] hover:border-terracotta/50 focus:border-terracotta focus:outline-none transition-all cursor-pointer hover:-translate-y-1 shadow-sm">
+              <!-- Floating Tooltip Card -->
+              <div class="hidden lg:block absolute -top-16 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 group-focus:opacity-100 group-hover:-translate-y-1.5 transition-all duration-200 pointer-events-none z-30 w-52 p-2.5 rounded-xl bg-[var(--sm-surface-raised)] border border-terracotta/30 shadow-2xl backdrop-blur-md">
+                <div class="text-[11px] font-medium text-[var(--sm-text-primary)] leading-tight">
+                  Fast safari itinerary builder with live lodge rate cards.
+                </div>
+                <div class="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-[var(--sm-surface-raised)] border-r border-b border-terracotta/30 transform rotate-45"></div>
+              </div>
+
+              <span class="text-[11px] font-mono font-bold text-[var(--sm-text-muted)] group-hover:text-terracotta transition-colors mb-1 uppercase stat-number">01</span>
+              
+              <div class="w-12 h-12 rounded-2xl bg-terracotta/10 border border-terracotta/20 text-terracotta flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-terracotta group-hover:text-white group-hover:shadow-[0_0_20px_rgba(210,91,39,0.4)] transition-all duration-300">
+                <i data-lucide="file-text" class="w-6 h-6"></i>
+              </div>
+
+              <h3 class="text-sm font-bold text-[var(--sm-text-primary)] mb-1 group-hover:text-terracotta transition-colors">New Quote</h3>
+              <p class="text-xs text-[var(--sm-text-secondary)] leading-snug">
+                Fast safari itinerary builder with live lodge rate cards.
+              </p>
+            </div>
+
+            <!-- Step 2: Invoice -->
+            <div tabindex="0" class="pipeline-step-card group relative flex flex-col items-start lg:items-center text-left lg:text-center p-4 rounded-xl bg-[var(--sm-surface)] border border-[var(--sm-border)] hover:border-terracotta/50 focus:border-terracotta focus:outline-none transition-all cursor-pointer hover:-translate-y-1 shadow-sm">
+              <!-- Floating Tooltip Card -->
+              <div class="hidden lg:block absolute -top-16 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 group-focus:opacity-100 group-hover:-translate-y-1.5 transition-all duration-200 pointer-events-none z-30 w-52 p-2.5 rounded-xl bg-[var(--sm-surface-raised)] border border-terracotta/30 shadow-2xl backdrop-blur-md">
+                <div class="text-[11px] font-medium text-[var(--sm-text-primary)] leading-tight">
+                  One-click conversion into client tax invoices.
+                </div>
+                <div class="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-[var(--sm-surface-raised)] border-r border-b border-terracotta/30 transform rotate-45"></div>
+              </div>
+
+              <span class="text-[11px] font-mono font-bold text-[var(--sm-text-muted)] group-hover:text-terracotta transition-colors mb-1 uppercase stat-number">02</span>
+              
+              <div class="w-12 h-12 rounded-2xl bg-terracotta/10 border border-terracotta/20 text-terracotta flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-terracotta group-hover:text-white group-hover:shadow-[0_0_20px_rgba(210,91,39,0.4)] transition-all duration-300">
+                <i data-lucide="receipt" class="w-6 h-6"></i>
+              </div>
+
+              <h3 class="text-sm font-bold text-[var(--sm-text-primary)] mb-1 group-hover:text-terracotta transition-colors">Invoice</h3>
+              <p class="text-xs text-[var(--sm-text-secondary)] leading-snug">
+                One-click conversion into client tax invoices.
+              </p>
+            </div>
+
+            <!-- Step 3: Reservation -->
+            <div tabindex="0" class="pipeline-step-card group relative flex flex-col items-start lg:items-center text-left lg:text-center p-4 rounded-xl bg-[var(--sm-surface)] border border-[var(--sm-border)] hover:border-terracotta/50 focus:border-terracotta focus:outline-none transition-all cursor-pointer hover:-translate-y-1 shadow-sm">
+              <!-- Floating Tooltip Card -->
+              <div class="hidden lg:block absolute -top-16 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 group-focus:opacity-100 group-hover:-translate-y-1.5 transition-all duration-200 pointer-events-none z-30 w-52 p-2.5 rounded-xl bg-[var(--sm-surface-raised)] border border-terracotta/30 shadow-2xl backdrop-blur-md">
+                <div class="text-[11px] font-medium text-[var(--sm-text-primary)] leading-tight">
+                  Track hotel, driver, and park entry confirmation.
+                </div>
+                <div class="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-[var(--sm-surface-raised)] border-r border-b border-terracotta/30 transform rotate-45"></div>
+              </div>
+
+              <span class="text-[11px] font-mono font-bold text-[var(--sm-text-muted)] group-hover:text-terracotta transition-colors mb-1 uppercase stat-number">03</span>
+              
+              <div class="w-12 h-12 rounded-2xl bg-terracotta/10 border border-terracotta/20 text-terracotta flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-terracotta group-hover:text-white group-hover:shadow-[0_0_20px_rgba(210,91,39,0.4)] transition-all duration-300">
+                <i data-lucide="calendar-check" class="w-6 h-6"></i>
+              </div>
+
+              <h3 class="text-sm font-bold text-[var(--sm-text-primary)] mb-1 group-hover:text-terracotta transition-colors">Reservation</h3>
+              <p class="text-xs text-[var(--sm-text-secondary)] leading-snug">
+                Track hotel, driver, and park entry confirmation.
+              </p>
+            </div>
+
+            <!-- Step 4: Voucher -->
+            <div tabindex="0" class="pipeline-step-card group relative flex flex-col items-start lg:items-center text-left lg:text-center p-4 rounded-xl bg-[var(--sm-surface)] border border-[var(--sm-border)] hover:border-terracotta/50 focus:border-terracotta focus:outline-none transition-all cursor-pointer hover:-translate-y-1 shadow-sm">
+              <!-- Floating Tooltip Card -->
+              <div class="hidden lg:block absolute -top-16 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 group-focus:opacity-100 group-hover:-translate-y-1.5 transition-all duration-200 pointer-events-none z-30 w-52 p-2.5 rounded-xl bg-[var(--sm-surface-raised)] border border-terracotta/30 shadow-2xl backdrop-blur-md">
+                <div class="text-[11px] font-medium text-[var(--sm-text-primary)] leading-tight">
+                  Issue barcoded lodge and transfer vouchers.
+                </div>
+                <div class="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-[var(--sm-surface-raised)] border-r border-b border-terracotta/30 transform rotate-45"></div>
+              </div>
+
+              <span class="text-[11px] font-mono font-bold text-[var(--sm-text-muted)] group-hover:text-terracotta transition-colors mb-1 uppercase stat-number">04</span>
+              
+              <div class="w-12 h-12 rounded-2xl bg-terracotta/10 border border-terracotta/20 text-terracotta flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-terracotta group-hover:text-white group-hover:shadow-[0_0_20px_rgba(210,91,39,0.4)] transition-all duration-300">
+                <i data-lucide="ticket" class="w-6 h-6"></i>
+              </div>
+
+              <h3 class="text-sm font-bold text-[var(--sm-text-primary)] mb-1 group-hover:text-terracotta transition-colors">Voucher</h3>
+              <p class="text-xs text-[var(--sm-text-secondary)] leading-snug">
+                Issue barcoded lodge and transfer vouchers.
+              </p>
+            </div>
+
+            <!-- Step 5: Payment -->
+            <div tabindex="0" class="pipeline-step-card group relative flex flex-col items-start lg:items-center text-left lg:text-center p-4 rounded-xl bg-[var(--sm-surface)] border border-[var(--sm-border)] hover:border-terracotta/50 focus:border-terracotta focus:outline-none transition-all cursor-pointer hover:-translate-y-1 shadow-sm">
+              <!-- Floating Tooltip Card -->
+              <div class="hidden lg:block absolute -top-16 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 group-focus:opacity-100 group-hover:-translate-y-1.5 transition-all duration-200 pointer-events-none z-30 w-52 p-2.5 rounded-xl bg-[var(--sm-surface-raised)] border border-terracotta/30 shadow-2xl backdrop-blur-md">
+                <div class="text-[11px] font-medium text-[var(--sm-text-primary)] leading-tight">
+                  Log client deposits, wires, and clerk collections.
+                </div>
+                <div class="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-[var(--sm-surface-raised)] border-r border-b border-terracotta/30 transform rotate-45"></div>
+              </div>
+
+              <span class="text-[11px] font-mono font-bold text-[var(--sm-text-muted)] group-hover:text-terracotta transition-colors mb-1 uppercase stat-number">05</span>
+              
+              <div class="w-12 h-12 rounded-2xl bg-terracotta/10 border border-terracotta/20 text-terracotta flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-terracotta group-hover:text-white group-hover:shadow-[0_0_20px_rgba(210,91,39,0.4)] transition-all duration-300">
+                <i data-lucide="credit-card" class="w-6 h-6"></i>
+              </div>
+
+              <h3 class="text-sm font-bold text-[var(--sm-text-primary)] mb-1 group-hover:text-terracotta transition-colors">Payment</h3>
+              <p class="text-xs text-[var(--sm-text-secondary)] leading-snug">
+                Log client deposits, wires, and clerk collections.
+              </p>
+            </div>
+
+            <!-- Step 6: Receipt -->
+            <div tabindex="0" class="pipeline-step-card group relative flex flex-col items-start lg:items-center text-left lg:text-center p-4 rounded-xl bg-[var(--sm-surface)] border border-[var(--sm-border)] hover:border-terracotta/50 focus:border-terracotta focus:outline-none transition-all cursor-pointer hover:-translate-y-1 shadow-sm">
+              <!-- Floating Tooltip Card -->
+              <div class="hidden lg:block absolute -top-16 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 group-focus:opacity-100 group-hover:-translate-y-1.5 transition-all duration-200 pointer-events-none z-30 w-52 p-2.5 rounded-xl bg-[var(--sm-surface-raised)] border border-terracotta/30 shadow-2xl backdrop-blur-md">
+                <div class="text-[11px] font-medium text-[var(--sm-text-primary)] leading-tight">
+                  Instant branded payment confirmation.
+                </div>
+                <div class="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-[var(--sm-surface-raised)] border-r border-b border-terracotta/30 transform rotate-45"></div>
+              </div>
+
+              <span class="text-[11px] font-mono font-bold text-[var(--sm-text-muted)] group-hover:text-terracotta transition-colors mb-1 uppercase stat-number">06</span>
+              
+              <div class="w-12 h-12 rounded-2xl bg-terracotta/10 border border-terracotta/20 text-terracotta flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-terracotta group-hover:text-white group-hover:shadow-[0_0_20px_rgba(210,91,39,0.4)] transition-all duration-300">
+                <i data-lucide="file-check" class="w-6 h-6"></i>
+              </div>
+
+              <h3 class="text-sm font-bold text-[var(--sm-text-primary)] mb-1 group-hover:text-terracotta transition-colors">Receipt</h3>
+              <p class="text-xs text-[var(--sm-text-secondary)] leading-snug">
+                Instant branded payment confirmation.
+              </p>
+            </div>
+
+            <!-- Step 7: Expense -->
+            <div tabindex="0" class="pipeline-step-card group relative flex flex-col items-start lg:items-center text-left lg:text-center p-4 rounded-xl bg-[var(--sm-surface)] border border-[var(--sm-border)] hover:border-terracotta/50 focus:border-terracotta focus:outline-none transition-all cursor-pointer hover:-translate-y-1 shadow-sm">
+              <!-- Floating Tooltip Card -->
+              <div class="hidden lg:block absolute -top-16 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 group-focus:opacity-100 group-hover:-translate-y-1.5 transition-all duration-200 pointer-events-none z-30 w-52 p-2.5 rounded-xl bg-[var(--sm-surface-raised)] border border-terracotta/30 shadow-2xl backdrop-blur-md">
+                <div class="text-[11px] font-medium text-[var(--sm-text-primary)] leading-tight">
+                  Tag driver allowances, fuel, and park fees.
+                </div>
+                <div class="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-[var(--sm-surface-raised)] border-r border-b border-terracotta/30 transform rotate-45"></div>
+              </div>
+
+              <span class="text-[11px] font-mono font-bold text-[var(--sm-text-muted)] group-hover:text-terracotta transition-colors mb-1 uppercase stat-number">07</span>
+              
+              <div class="w-12 h-12 rounded-2xl bg-terracotta/10 border border-terracotta/20 text-terracotta flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-terracotta group-hover:text-white group-hover:shadow-[0_0_20px_rgba(210,91,39,0.4)] transition-all duration-300">
+                <i data-lucide="coins" class="w-6 h-6"></i>
+              </div>
+
+              <h3 class="text-sm font-bold text-[var(--sm-text-primary)] mb-1 group-hover:text-terracotta transition-colors">Expense</h3>
+              <p class="text-xs text-[var(--sm-text-secondary)] leading-snug">
+                Tag driver allowances, fuel, and park fees.
+              </p>
+            </div>
+
+            <!-- Step 8: Profit Analysis -->
+            <div tabindex="0" class="pipeline-step-card group relative flex flex-col items-start lg:items-center text-left lg:text-center p-4 rounded-xl bg-[var(--sm-surface)] border border-[var(--sm-border)] hover:border-emerald-500/50 focus:border-emerald-500 focus:outline-none transition-all cursor-pointer hover:-translate-y-1 shadow-sm">
+              <!-- Floating Tooltip Card -->
+              <div class="hidden lg:block absolute -top-16 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 group-focus:opacity-100 group-hover:-translate-y-1.5 transition-all duration-200 pointer-events-none z-30 w-52 p-2.5 rounded-xl bg-[var(--sm-surface-raised)] border border-emerald-500/30 shadow-2xl backdrop-blur-md">
+                <div class="text-[11px] font-medium text-[var(--sm-text-primary)] leading-tight">
+                  Review net trip margin per booking.
+                </div>
+                <div class="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-[var(--sm-surface-raised)] border-r border-b border-emerald-500/30 transform rotate-45"></div>
+              </div>
+
+              <span class="text-[11px] font-mono font-bold text-emerald-500/70 group-hover:text-emerald-500 transition-colors mb-1 uppercase stat-number">08</span>
+              
+              <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white group-hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all duration-300">
+                <i data-lucide="trending-up" class="w-6 h-6"></i>
+              </div>
+
+              <h3 class="text-sm font-bold text-[var(--sm-text-primary)] mb-1 group-hover:text-emerald-500 transition-colors">Profit Analysis</h3>
+              <p class="text-xs text-[var(--sm-text-secondary)] leading-snug">
+                Review net trip margin per booking.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 5. FEATURE PILLARS (Asymmetric Bento Grid - 7 Cards) -->
+    <section id="modules" class="py-24 relative overflow-hidden z-0">
+      
+      <!-- Decorative Glass Blob Accents (Positioned behind cards - z-10) -->
+      <div class="feature-blob absolute top-1/4 -left-20 w-80 h-80 bg-terracotta/15 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+      <div class="feature-blob absolute bottom-10 -right-20 w-96 h-96 bg-terracotta/15 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
+        
+        <!-- Section Header -->
+        <div class="max-w-3xl space-y-4 mb-16">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-terracotta/10 border border-terracotta/20 eyebrow mb-4">
+            PRODUCT PILLARS
+          </div>
+          <h2 class="h2-display text-[var(--sm-text-primary)] mb-6">
+            Built Specifically For Modern Safari Operations
+          </h2>
+          <p class="body-lg max-w-[60ch]">
+            Every feature is designed around real tour workflows, eliminating fragmented spreadsheets and manual voucher errors.
+          </p>
+        </div>
+
+        <!-- Asymmetric Bento Grid (7 Cards with alternating surface tones) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Card 1: Large Featured Card (Spans 2 columns on lg, Tone: Surface) -->
+          <div class="lg:col-span-2 p-8 rounded-card bg-[var(--sm-surface)] border border-[var(--sm-border)] hover:border-terracotta/40 hover:-translate-y-1 hover:shadow-[var(--sm-card-shadow)] transition-all duration-200 ease-out shadow-sm flex flex-col justify-between group cursor-pointer">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <div class="p-3.5 rounded-xl bg-terracotta/15 text-[var(--sm-accent-on-surface)] group-hover:bg-terracotta group-hover:text-white group-hover:shadow-[0_0_15px_rgba(210,91,39,0.35)] transition-all duration-200 ease-out">
+                  <i data-lucide="file-check-2" class="w-7 h-7"></i>
+                </div>
+                <span class="text-xs font-semibold px-3 py-1 rounded-full bg-terracotta/10 text-[var(--sm-accent-on-surface)] border border-terracotta/20">Core Workflow</span>
+              </div>
+              <h3 class="h3-heading text-[var(--sm-text-primary)] mb-3 group-hover:text-[var(--sm-accent-on-surface)] transition-colors duration-200">
+                Quote To Invoice Flow
+              </h3>
+              <!-- Exact Copy -->
+              <p class="body-base text-[var(--sm-text-secondary)] max-w-[60ch] mb-4">
+                Turn accepted quotes into clean invoices, payment records, receipts, and reservation workflows.
+              </p>
+
+              <!-- Embedded Mini UI Diagram (Quote to Invoice Conversion) -->
+              <div class="mt-6 p-4 rounded-xl bg-[var(--sm-surface-raised)] border border-[var(--sm-border)] shadow-inner">
+                <div class="flex items-center justify-between text-[11px] font-mono text-[var(--sm-text-muted)] mb-3 pb-2 border-b border-[var(--sm-border)]">
+                  <span class="flex items-center gap-1.5 font-bold text-[var(--sm-text-primary)]">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 dot-pulse"></span>
+                    1-Click Conversion Pipeline
+                  </span>
+                  <span class="hidden sm:inline stat-number">Safari ID: #SAF-9041</span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 items-center text-xs">
+                  <!-- Step 1: Quote -->
+                  <div class="p-3 rounded-lg bg-[var(--sm-surface)] border border-[var(--sm-border)] flex flex-col gap-1">
+                    <div class="flex items-center justify-between">
+                      <span class="text-[10px] font-bold text-[var(--sm-text-muted)] uppercase">Quote</span>
+                      <span class="px-1.5 py-0.5 text-[9px] font-semibold rounded bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">Approved</span>
+                    </div>
+                    <div class="font-bold text-[var(--sm-text-primary)] stat-number">#QT-8042</div>
+                    <div class="text-[11px] text-terracotta font-semibold stat-number">$12,400 USD</div>
+                  </div>
+
+                  <!-- Arrow / Conversion Action -->
+                  <div class="flex flex-col items-center justify-center gap-1 text-[10px] text-[var(--sm-text-muted)] py-1">
+                    <div class="w-full flex items-center justify-center gap-1 text-terracotta font-semibold">
+                      <span class="hidden sm:inline border-t border-dashed border-terracotta/40 flex-1"></span>
+                      <span class="px-2 py-0.5 rounded-full bg-terracotta/10 border border-terracotta/20 text-[10px]">Convert</span>
+                      <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                      <span class="hidden sm:inline border-t border-dashed border-terracotta/40 flex-1"></span>
+                    </div>
+                  </div>
+
+                  <!-- Step 2: Invoice -->
+                  <div class="p-3 rounded-lg bg-[var(--sm-surface)] border border-terracotta/30 flex flex-col gap-1 shadow-sm">
+                    <div class="flex items-center justify-between">
+                      <span class="text-[10px] font-bold text-[var(--sm-text-muted)] uppercase">Invoice</span>
+                      <span class="px-1.5 py-0.5 text-[9px] font-semibold rounded bg-terracotta/10 text-terracotta border border-terracotta/20">Issued</span>
+                    </div>
+                    <div class="font-bold text-[var(--sm-text-primary)] stat-number">#INV-2091</div>
+                    <div class="text-[11px] text-[var(--sm-text-primary)] font-semibold stat-number">$12,400 USD</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            
+            <!-- Mini Visual Detail List -->
+            <div class="mt-8 pt-6 border-t border-[var(--sm-border)] grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-[var(--sm-text-muted)] font-medium">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
+                <span>Auto FX Conversion</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
+                <span>Multi-Lodge Rates</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
+                <span>Tax Breakdown</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Reservations And Vouchers (Tone: Surface-Raised) -->
+          <div class="p-8 rounded-card bg-[var(--sm-surface-raised)] border border-[var(--sm-border)] hover:border-terracotta/40 hover:-translate-y-1 hover:shadow-[var(--sm-card-shadow)] transition-all duration-200 ease-out shadow-sm flex flex-col justify-between group cursor-pointer">
+            <div>
+              <div class="p-3.5 rounded-xl bg-terracotta/15 text-[var(--sm-accent-on-surface)] group-hover:bg-terracotta group-hover:text-white group-hover:shadow-[0_0_15px_rgba(210,91,39,0.35)] transition-all duration-200 ease-out w-fit mb-6">
+                <i data-lucide="ticket" class="w-7 h-7"></i>
+              </div>
+              <h3 class="h3-heading text-[var(--sm-text-primary)] mb-3 group-hover:text-[var(--sm-accent-on-surface)] transition-colors duration-200">
+                Reservations And Vouchers
+              </h3>
+              <!-- Exact Copy -->
+              <p class="body-base text-[var(--sm-text-secondary)]">
+                Move from sale to execution with reservation updates, checklists, and branded vouchers.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3: Payments, Receipts, And Reconciliation (Tone: Surface) -->
+          <div class="p-8 rounded-card bg-[var(--sm-surface)] border border-[var(--sm-border)] hover:border-terracotta/40 hover:-translate-y-1 hover:shadow-[var(--sm-card-shadow)] transition-all duration-200 ease-out shadow-sm flex flex-col justify-between group cursor-pointer">
+            <div>
+              <div class="p-3.5 rounded-xl bg-terracotta/15 text-[var(--sm-accent-on-surface)] group-hover:bg-terracotta group-hover:text-white group-hover:shadow-[0_0_15px_rgba(210,91,39,0.35)] transition-all duration-200 ease-out w-fit mb-6">
+                <i data-lucide="scale" class="w-7 h-7"></i>
+              </div>
+              <h3 class="h3-heading text-[var(--sm-text-primary)] mb-3 group-hover:text-[var(--sm-accent-on-surface)] transition-colors duration-200">
+                Payments, Receipts, And Reconciliation
+              </h3>
+              <!-- Exact Copy -->
+              <p class="body-base text-[var(--sm-text-secondary)]">
+                Keep every shilling visible from client payment to supplier payout and final reconciliation.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4: Profit Analysis (Tone: Surface-Raised) -->
+          <div class="p-8 rounded-card bg-[var(--sm-surface-raised)] border border-[var(--sm-border)] hover:border-emerald-500/40 hover:-translate-y-1 hover:shadow-[var(--sm-card-shadow)] transition-all duration-200 ease-out shadow-sm flex flex-col justify-between group cursor-pointer">
+            <div>
+              <div class="p-3.5 rounded-xl bg-emerald-500/15 text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white group-hover:shadow-[0_0_15px_rgba(16,185,129,0.35)] transition-all duration-200 ease-out w-fit mb-6">
+                <i data-lucide="pie-chart" class="w-7 h-7"></i>
+              </div>
+              <h3 class="h3-heading text-[var(--sm-text-primary)] mb-3 group-hover:text-emerald-500 transition-colors duration-200">
+                Profit Analysis
+              </h3>
+              <!-- Exact Copy -->
+              <p class="body-base text-[var(--sm-text-secondary)]">
+                See what each trip actually earns after supplier costs and operational expenses.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 5: Vendors And Core Registries (Tone: Surface) -->
+          <div class="p-8 rounded-card bg-[var(--sm-surface)] border border-[var(--sm-border)] hover:border-terracotta/40 hover:-translate-y-1 hover:shadow-[var(--sm-card-shadow)] transition-all duration-200 ease-out shadow-sm flex flex-col justify-between group cursor-pointer">
+            <div>
+              <div class="p-3.5 rounded-xl bg-terracotta/15 text-[var(--sm-accent-on-surface)] group-hover:bg-terracotta group-hover:text-white group-hover:shadow-[0_0_15px_rgba(210,91,39,0.35)] transition-all duration-200 ease-out w-fit mb-6">
+                <i data-lucide="building-2" class="w-7 h-7"></i>
+              </div>
+              <h3 class="h3-heading text-[var(--sm-text-primary)] mb-3 group-hover:text-[var(--sm-accent-on-surface)] transition-colors duration-200">
+                Vendors And Core Registries
+              </h3>
+              <!-- Exact Copy -->
+              <p class="body-base text-[var(--sm-text-secondary)]">
+                Keep hotels, drivers, destinations, customers, and vendors organized for faster quoting and operations.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 6: Governance And Tenant Control (Tone: Surface-Raised) -->
+          <div class="p-8 rounded-card bg-[var(--sm-surface-raised)] border border-[var(--sm-border)] hover:border-terracotta/40 hover:-translate-y-1 hover:shadow-[var(--sm-card-shadow)] transition-all duration-200 ease-out shadow-sm flex flex-col justify-between group cursor-pointer">
+            <div>
+              <div class="p-3.5 rounded-xl bg-terracotta/15 text-[var(--sm-accent-on-surface)] group-hover:bg-terracotta group-hover:text-white group-hover:shadow-[0_0_15px_rgba(210,91,39,0.35)] transition-all duration-200 ease-out w-fit mb-6">
+                <i data-lucide="shield-alert" class="w-7 h-7"></i>
+              </div>
+              <h3 class="h3-heading text-[var(--sm-text-primary)] mb-3 group-hover:text-[var(--sm-accent-on-surface)] transition-colors duration-200">
+                Governance And Tenant Control
+              </h3>
+              <!-- Exact Copy -->
+              <p class="body-base text-[var(--sm-text-secondary)]">
+                Give every company its own workspace while governance keeps oversight, access, and audit control.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 7: Messages And Support Tickets (Spans 2 cols on md/lg, Tone: Surface) -->
+          <div class="p-8 rounded-card bg-[var(--sm-surface)] border border-[var(--sm-border)] hover:border-terracotta/40 hover:-translate-y-1 hover:shadow-[var(--sm-card-shadow)] transition-all duration-200 ease-out shadow-sm flex flex-col justify-between group cursor-pointer md:col-span-2 lg:col-span-2">
+            <div>
+              <div class="p-3.5 rounded-xl bg-terracotta/15 text-[var(--sm-accent-on-surface)] group-hover:bg-terracotta group-hover:text-white group-hover:shadow-[0_0_15px_rgba(210,91,39,0.35)] transition-all duration-200 ease-out w-fit mb-6">
+                <i data-lucide="life-buoy" class="w-7 h-7"></i>
+              </div>
+              <h3 class="h3-heading text-[var(--sm-text-primary)] mb-3 group-hover:text-[var(--sm-accent-on-surface)] transition-colors duration-200">
+                Messages And Support Tickets
+              </h3>
+              <!-- Exact Copy -->
+              <p class="body-base text-[var(--sm-text-secondary)] max-w-[60ch]">
+                Keep internal alerts and client issues visible until the right people act.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 6. FINANCE & ACCOUNTABILITY SECTION -->
+    <section id="finance" class="py-24 bg-[var(--sm-bg-alt)] border-y border-[var(--sm-border)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Content Side -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="eyebrow inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-terracotta/10 border border-terracotta/20 text-[var(--sm-accent-on-surface)]">
+            FINANCE & ACCOUNTABILITY
+          </div>
+          <h2 class="h2-display text-[var(--sm-text-primary)]">
+            Finance Confidence Across Every Safari Booking
+          </h2>
+          <!-- Exact Paragraph -->
+          <p class="body-lg text-[var(--sm-text-secondary)]">
+            Every payment, balance, supplier payout, receipt, and reconciliation record stays connected to the trip it belongs to, giving managers a clearer view of cash flow and margin.
+          </p>
+
+          <!-- 6 Capability Chips with Subtle Hover Glow -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-4">
+            <div class="p-3 rounded-xl bg-[var(--sm-surface)] border border-[var(--sm-border)] hover:border-terracotta/40 hover:shadow-[0_0_15px_rgba(210,91,39,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer flex items-center gap-2 text-xs font-semibold text-[var(--sm-text-primary)] group">
+              <i data-lucide="receipt" class="w-4 h-4 text-terracotta group-hover:scale-110 transition-transform"></i>
+              <span>Receipts</span>
+            </div>
+
+            <div class="p-3 rounded-xl bg-[var(--sm-surface)] border border-[var(--sm-border)] hover:border-terracotta/40 hover:shadow-[0_0_15px_rgba(210,91,39,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer flex items-center gap-2 text-xs font-semibold text-[var(--sm-text-primary)] group">
+              <i data-lucide="coins" class="w-4 h-4 text-terracotta group-hover:scale-110 transition-transform"></i>
+              <span>Expenses</span>
+            </div>
+
+            <div class="p-3 rounded-xl bg-[var(--sm-surface)] border border-[var(--sm-border)] hover:border-terracotta/40 hover:shadow-[0_0_15px_rgba(210,91,39,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer flex items-center gap-2 text-xs font-semibold text-[var(--sm-text-primary)] group">
+              <i data-lucide="check-check" class="w-4 h-4 text-terracotta group-hover:scale-110 transition-transform"></i>
+              <span>Reconciliation</span>
+            </div>
+
+            <div class="p-3 rounded-xl bg-[var(--sm-surface)] border border-[var(--sm-border)] hover:border-terracotta/40 hover:shadow-[0_0_15px_rgba(210,91,39,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer flex items-center gap-2 text-xs font-semibold text-[var(--sm-text-primary)] group">
+              <i data-lucide="wallet" class="w-4 h-4 text-terracotta group-hover:scale-110 transition-transform"></i>
+              <span>Clerk Collections</span>
+            </div>
+
+            <div class="p-3 rounded-xl bg-[var(--sm-surface)] border border-[var(--sm-border)] hover:border-terracotta/40 hover:shadow-[0_0_15px_rgba(210,91,39,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer flex items-center gap-2 text-xs font-semibold text-[var(--sm-text-primary)] group">
+              <i data-lucide="arrow-up-right" class="w-4 h-4 text-terracotta group-hover:scale-110 transition-transform"></i>
+              <span>Supplier Payouts</span>
+            </div>
+
+            <div class="p-3 rounded-xl bg-[var(--sm-surface)] border border-[var(--sm-border)] hover:border-terracotta/40 hover:shadow-[0_0_15px_rgba(210,91,39,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer flex items-center gap-2 text-xs font-semibold text-[var(--sm-text-primary)] group">
+              <i data-lucide="file-search" class="w-4 h-4 text-terracotta group-hover:scale-110 transition-transform"></i>
+              <span>Audit Logs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Side: Dark Panel with Overlapping Document Tiles & SVG Animated Ring UI -->
+        <div class="lg:col-span-6 relative">
+          <div class="p-8 rounded-2xl bg-[#0A0A0C] border border-white/10 text-white shadow-2xl space-y-6">
+            
+            <div class="flex items-center justify-between pb-4 border-b border-white/10">
+              <div class="flex items-center gap-2">
+                <i data-lucide="landmark" class="w-5 h-5 text-terracotta"></i>
+                <span class="text-sm font-bold text-zinc-200">Trip Reconciliation Ledger</span>
+              </div>
+              <span class="text-xs px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono">Audit Ready</span>
+            </div>
+
+            <!-- Overlapping Document Cards Representation -->
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-between hover:border-white/20 transition-all">
+                <div class="flex items-center gap-3">
+                  <div class="p-2 rounded-lg bg-terracotta/20 text-terracotta">
+                    <i data-lucide="file-check" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <div class="text-xs font-semibold text-white">Client Payment Receipt #RCP-4412</div>
+                    <div class="text-[10px] text-zinc-400">Direct Wire Deposit · Standard Chartered</div>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <div class="stat-number text-xs font-extrabold text-white">KES 1,200,000</div>
+                  <div class="text-[10px] text-emerald-400 font-semibold">Matched</div>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-between hover:border-white/20 transition-all">
+                <div class="flex items-center gap-3">
+                  <div class="p-2 rounded-lg bg-amber-500/20 text-amber-400">
+                    <i data-lucide="arrow-right-left" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <div class="text-xs font-semibold text-white">Four Seasons Lodge Payout</div>
+                    <div class="text-[10px] text-zinc-400">Supplier Ledger Settlement</div>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <div class="stat-number text-xs font-extrabold text-zinc-300">- KES 780,000</div>
+                  <div class="text-[10px] text-amber-400 font-semibold">Pending Receipt</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Real Animated SVG Reconciliation Ring UI Badge -->
+            <div class="p-4 rounded-xl bg-terracotta/10 border border-terracotta/30 flex items-center justify-between shadow-lg">
+              <div class="flex items-center gap-3.5">
+                <div class="relative w-12 h-12 flex items-center justify-center">
+                  <svg class="w-12 h-12 transform -rotate-90" viewBox="0 0 36 36">
+                    <path class="text-white/10" stroke-width="3.5" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path id="reconcile-ring" class="text-terracotta transition-all duration-1000 ease-out" stroke-dasharray="0, 100" stroke-width="3.5" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  </svg>
+                  <span id="reconcile-score-text" class="stat-number absolute text-[10px] font-extrabold text-white">0%</span>
+                </div>
+                <div>
+                  <div class="text-xs font-bold text-white">Reconciliation Score</div>
+                  <div class="text-[10px] text-zinc-400">Automated ledger verification active</div>
+                </div>
+              </div>
+              <span class="text-xs font-bold text-emerald-400 px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/20">Balanced</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 7. MULTI-TENANT GOVERNANCE SECTION -->
+    <section id="governance" class="py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Visual Side: Workspace-switcher Glass Mockup -->
+        <div class="lg:col-span-6 order-2 lg:order-1">
+          <div class="p-6 sm:p-8 rounded-card glass-panel shadow-sm-card space-y-5 border border-[var(--sm-border)]">
+            
+            <!-- Header Control -->
+            <div class="flex items-center justify-between pb-4 border-b border-[var(--sm-border)]">
+              <div class="flex items-center gap-2">
+                <i data-lucide="layers" class="w-5 h-5 text-terracotta"></i>
+                <span class="text-sm font-bold text-[var(--sm-text-primary)]">Governance Workspace Switcher</span>
+              </div>
+              <span class="text-xs text-[var(--sm-text-muted)] font-mono">4 Workspaces</span>
+            </div>
+
+            <!-- Active Dropdown Trigger Affordance -->
+            <div class="p-3.5 rounded-xl bg-[var(--sm-surface-raised)] border border-terracotta/40 flex items-center justify-between cursor-pointer hover:border-terracotta transition-all shadow-sm group">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-terracotta text-white flex items-center justify-center font-bold text-xs shadow-sm">
+                  SD
+                </div>
+                <div>
+                  <div class="text-xs font-extrabold text-[var(--sm-text-primary)] flex items-center gap-1.5">
+                    Serengeti DMC
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  </div>
+                  <div class="text-[10px] text-[var(--sm-text-muted)] font-mono">Active Workspace · ID: #T-9012</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 text-xs text-terracotta font-semibold">
+                <span class="hidden sm:inline text-[11px]">Switch</span>
+                <i data-lucide="chevrons-up-down" class="w-4 h-4 text-terracotta group-hover:scale-110 transition-transform"></i>
+              </div>
+            </div>
+
+            <!-- List of Tenant Workspace Rows (4 Rows with colored role badges) -->
+            <div class="space-y-2.5 pt-1">
+              
+              <!-- Tenant 1: Admin Role (Emerald Badge / --sm-success) -->
+              <div class="p-3.5 rounded-xl bg-[var(--sm-surface)] border border-[var(--sm-border)] flex items-center justify-between hover:border-terracotta/30 transition-all cursor-pointer">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-full bg-emerald-500/15 text-emerald-500 border border-emerald-500/30 flex items-center justify-center font-bold text-xs">
+                    SD
+                  </div>
+                  <div>
+                    <div class="text-xs font-bold text-[var(--sm-text-primary)]">Serengeti DMC</div>
+                    <div class="text-[10px] text-[var(--sm-text-secondary)] font-mono">Prefix: SD · INV-2026-XXXX</div>
+                  </div>
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/15 text-emerald-500 border border-emerald-500/30">
+                  Admin
+                </span>
+              </div>
+
+              <!-- Tenant 2: Governance Role (Amber Badge / --sm-warning) -->
+              <div class="p-3.5 rounded-xl bg-[var(--sm-surface)] border border-[var(--sm-border)] flex items-center justify-between hover:border-terracotta/30 transition-all cursor-pointer">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-full bg-amber-500/15 text-amber-500 border border-amber-500/30 flex items-center justify-center font-bold text-xs">
+                    KE
+                  </div>
+                  <div>
+                    <div class="text-xs font-bold text-[var(--sm-text-primary)]">Kilimanjaro Expeditions</div>
+                    <div class="text-[10px] text-[var(--sm-text-secondary)] font-mono">Prefix: KE · INV-2026-XXXX</div>
+                  </div>
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/15 text-amber-500 border border-amber-500/30">
+                  Governance
+                </span>
+              </div>
+
+              <!-- Tenant 3: Staff Role (Muted Badge) -->
+              <div class="p-3.5 rounded-xl bg-[var(--sm-surface)] border border-[var(--sm-border)] flex items-center justify-between hover:border-terracotta/30 transition-all cursor-pointer">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-full bg-zinc-500/15 text-zinc-400 border border-zinc-500/30 flex items-center justify-center font-bold text-xs">
+                    MM
+                  </div>
+                  <div>
+                    <div class="text-xs font-bold text-[var(--sm-text-primary)]">Mara Mara Safaris</div>
+                    <div class="text-[10px] text-[var(--sm-text-secondary)] font-mono">Prefix: MM · INV-2026-XXXX</div>
+                  </div>
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-zinc-500/15 text-zinc-400 border border-zinc-500/30">
+                  Staff
+                </span>
+              </div>
+
+              <!-- Tenant 4: Auditor / Viewer Role (Muted Blue Badge) -->
+              <div class="p-3.5 rounded-xl bg-[var(--sm-surface)] border border-[var(--sm-border)] flex items-center justify-between hover:border-terracotta/30 transition-all cursor-pointer">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-full bg-blue-500/15 text-blue-400 border border-blue-500/30 flex items-center justify-center font-bold text-xs">
+                    ZC
+                  </div>
+                  <div>
+                    <div class="text-xs font-bold text-[var(--sm-text-primary)]">Zanzibar Coastal Tours</div>
+                    <div class="text-[10px] text-[var(--sm-text-secondary)] font-mono">Prefix: ZC · INV-2026-XXXX</div>
+                  </div>
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-blue-500/15 text-blue-400 border border-blue-500/30">
+                  Auditor
+                </span>
+              </div>
+
+            </div>
+
+            <div class="pt-2 border-t border-[var(--sm-border)] text-xs text-[var(--sm-text-muted)] italic flex items-center justify-between">
+              <span>* Isolated invoice & voucher numbering per tenant</span>
+              <span class="font-mono text-[10px] text-emerald-500 font-semibold">Audit Compliant</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Content Side -->
+        <div class="lg:col-span-6 order-1 lg:order-2 space-y-6">
+          <div class="eyebrow inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-terracotta/10 border border-terracotta/20 text-[var(--sm-accent-on-surface)]">
+            MULTI-TENANT GOVERNANCE
+          </div>
+          <h2 class="h2-display text-[var(--sm-text-primary)]">
+            Independent Workspaces With Governance Control
+          </h2>
+          <!-- Exact Paragraph -->
+          <p class="body-lg text-[var(--sm-text-secondary)]">
+            Governance users can manage companies, company admins, platform users, tickets, and audit visibility without mixing tenant workspaces.
+          </p>
+          <!-- Supporting Line -->
+          <p class="body-base text-[var(--sm-text-muted)] pt-2 border-t border-[var(--sm-border)]">
+            Each company can keep its own logo, document details, invoice numbering, quote numbering, voucher numbering, and receipt numbering across client-facing documents.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 8. BRANDED DOCUMENTS SECTION -->
+    <section class="py-24 bg-[var(--sm-bg-alt)] border-y border-[var(--sm-border)] overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+          <div class="eyebrow inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-terracotta/10 border border-terracotta/20 text-[var(--sm-accent-on-surface)]">
+            BRANDED DOCUMENTS
+          </div>
+          <h2 class="h2-display text-[var(--sm-text-primary)]">
+            Client-Facing Precision & Custom Branding
+          </h2>
+          <p class="body-lg text-[var(--sm-text-secondary)] max-w-2xl mx-auto">
+            Every document generated by SafariMaster carries your tenant branding, exact logo, custom tax IDs, and official barcoded verification.
+          </p>
+        </div>
+
+        <!-- 4 Fanned Out Floating Document Cards with Physical Stack Shadow -->
+        <div class="relative max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-2 items-center py-6">
+          
+          <!-- Doc 1: Quote Preview (Rotated -3deg) -->
+          <div class="p-6 rounded-2xl bg-[var(--sm-surface)] border border-[var(--sm-border)] shadow-[0_12px_30px_rgba(0,0,0,0.12)] transform lg:-rotate-3 lg:translate-y-2 hover:rotate-0 hover:scale-105 hover:-translate-y-4 hover:z-40 hover:shadow-2xl transition-all duration-300 ease-out group cursor-pointer relative z-10">
+            <div class="h-2 rounded-t-lg bg-terracotta mb-4"></div>
+            <div class="flex items-center justify-between pb-3 border-b border-[var(--sm-border)]">
+              <span class="text-xs font-extrabold text-terracotta tracking-wider">SERENGETI DMC</span>
+              <span class="text-[9px] px-2 py-0.5 rounded bg-terracotta/10 text-terracotta font-bold border border-terracotta/20">QUOTATION</span>
+            </div>
+            <div class="py-4 space-y-2">
+              <div class="h3-heading text-sm text-[var(--sm-text-primary)]">7-Day Serengeti Fly-In Safari</div>
+              <div class="text-[11px] text-[var(--sm-text-muted)] font-mono">Ref: #QTE-2026-042</div>
+              <div class="text-[11px] text-[var(--sm-text-secondary)]">Includes: Luxury Flights, Full Board</div>
+              <div class="mt-4 pt-3 border-t border-[var(--sm-border)] flex justify-between items-center text-xs font-bold">
+                <span class="text-[var(--sm-text-muted)]">Total Amount:</span>
+                <span class="stat-number text-terracotta font-mono font-extrabold">$8,450 USD</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Doc 2: Invoice Preview (Rotated -1deg) -->
+          <div class="p-6 rounded-2xl bg-[var(--sm-surface)] border border-[var(--sm-border)] shadow-[0_16px_35px_rgba(0,0,0,0.15)] transform lg:-rotate-1 lg:-translate-y-2 hover:rotate-0 hover:scale-105 hover:-translate-y-4 hover:z-40 hover:shadow-2xl transition-all duration-300 ease-out group cursor-pointer relative z-20">
+            <div class="h-2 rounded-t-lg bg-emerald-500 mb-4"></div>
+            <div class="flex items-center justify-between pb-3 border-b border-[var(--sm-border)]">
+              <span class="text-xs font-extrabold text-terracotta tracking-wider">SERENGETI DMC</span>
+              <span class="text-[9px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-500 font-bold border border-emerald-500/20">TAX INVOICE</span>
+            </div>
+            <div class="py-4 space-y-2">
+              <div class="h3-heading text-sm text-[var(--sm-text-primary)]">Ngorongoro Crater Luxury Tour</div>
+              <div class="text-[11px] text-[var(--sm-text-muted)] font-mono">Invoice #INV-2026-118</div>
+              <div class="text-[11px] text-[var(--sm-text-secondary)]">VAT Pin: P051290311Z</div>
+              <div class="mt-4 pt-3 border-t border-[var(--sm-border)] flex justify-between items-center text-xs font-bold">
+                <span class="text-[var(--sm-text-muted)]">Total Due:</span>
+                <span class="stat-number text-[var(--sm-text-primary)] font-mono font-extrabold">KES 1,120,000</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Doc 3: Receipt Preview (Rotated 2deg, Front Stack) -->
+          <div class="p-6 rounded-2xl bg-[var(--sm-surface)] border border-[var(--sm-border)] shadow-[0_20px_40px_rgba(0,0,0,0.18)] transform lg:rotate-2 lg:translate-y-3 hover:rotate-0 hover:scale-105 hover:-translate-y-4 hover:z-40 hover:shadow-2xl transition-all duration-300 ease-out group cursor-pointer relative z-30">
+            <div class="h-2 rounded-t-lg bg-amber-500 mb-4"></div>
+            <div class="flex items-center justify-between pb-3 border-b border-[var(--sm-border)]">
+              <span class="text-xs font-extrabold text-terracotta tracking-wider">SERENGETI DMC</span>
+              <span class="text-[9px] px-2 py-0.5 rounded bg-amber-500/10 text-amber-500 font-bold border border-amber-500/20">OFFICIAL RECEIPT</span>
+            </div>
+            <div class="py-4 space-y-2">
+              <div class="h3-heading text-sm text-[var(--sm-text-primary)]">Deposit Wire Confirmation</div>
+              <div class="text-[11px] text-[var(--sm-text-muted)] font-mono">Receipt #RCP-2026-904</div>
+              <div class="text-[11px] text-emerald-500 font-semibold flex items-center gap-1">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
+                Cleared & Ledger Verified
+              </div>
+              <div class="mt-4 pt-3 border-t border-[var(--sm-border)] flex justify-between items-center text-xs font-bold">
+                <span class="text-[var(--sm-text-muted)]">Status:</span>
+                <span class="text-emerald-500 font-mono font-extrabold">CONFIRMED</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Doc 4: Travel Voucher Preview (Rotated 4deg) -->
+          <div class="p-6 rounded-2xl bg-[var(--sm-surface)] border border-[var(--sm-border)] shadow-[0_12px_30px_rgba(0,0,0,0.12)] transform lg:rotate-4 lg:translate-y-1 hover:rotate-0 hover:scale-105 hover:-translate-y-4 hover:z-40 hover:shadow-2xl transition-all duration-300 ease-out group cursor-pointer relative z-10">
+            <div class="h-2 rounded-t-lg bg-blue-500 mb-4"></div>
+            <div class="flex items-center justify-between pb-3 border-b border-[var(--sm-border)]">
+              <span class="text-xs font-extrabold text-terracotta tracking-wider">SERENGETI DMC</span>
+              <span class="text-[9px] px-2 py-0.5 rounded bg-blue-500/10 text-blue-500 font-bold border border-blue-500/20">RESERVATION VOUCHER</span>
+            </div>
+            <div class="py-4 space-y-2">
+              <div class="h3-heading text-sm text-[var(--sm-text-primary)]">Mara Serena Lodge Booking</div>
+              <div class="text-[11px] text-[var(--sm-text-muted)] font-mono">Voucher #VOU-2026-003</div>
+              <div class="text-[11px] text-[var(--sm-text-secondary)]">3 Nights · Full Board Lodge</div>
+              <div class="mt-4 pt-3 border-t border-[var(--sm-border)] flex justify-between items-center text-xs font-bold">
+                <span class="text-[var(--sm-text-muted)]">Verification:</span>
+                <span class="text-xs font-mono tracking-widest text-[var(--sm-text-primary)]">|||||||||||</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 9. FINAL CTA SECTION (ALWAYS DARK PANEL WITH STRONG TERRACOTTA GLOW) -->
+    <section id="contact" class="py-24 max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="relative rounded-2xl bg-[#0A0A0C] border border-white/10 p-10 sm:p-16 text-white text-center shadow-2xl overflow-hidden">
+        
+        <!-- Strong Terracotta Radial Glow -->
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-terracotta/30 via-transparent to-transparent pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-3xl mx-auto space-y-6">
+          <div class="eyebrow inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-terracotta/20 border border-terracotta/40 text-terracotta">
+            GET STARTED TODAY
+          </div>
+
+          <!-- Exact Heading -->
+          <h2 class="h2-display text-white">
+            Sell, Operate, Reconcile, And Grow Every Trip In One Place
+          </h2>
+
+          <!-- Exact Body Paragraph -->
+          <p class="body-lg text-zinc-300 max-w-2xl mx-auto">
+            Give your tour team one connected workspace for every quote, booking, payment, voucher, supplier cost, and profit decision.
+          </p>
+
+          <!-- Buttons -->
+          <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
+            <button onclick="openDemoModal()" class="px-8 py-4 rounded-xl bg-terracotta hover:bg-terracotta-hover text-white font-bold text-base shadow-sm hover:shadow-sm-glow transition-all">
+              Request Demo
+            </button>
+            <button onclick="openDemoModal()" class="px-8 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-white font-semibold text-base transition-all">
+              Book A Walkthrough
+            </button>
+          </div>
+
+          <!-- 3 Real Feature Trust Chips -->
+          <div class="pt-8 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-xs font-semibold text-zinc-400">
+            <div class="flex items-center gap-2">
+              <i data-lucide="shield-check" class="w-4 h-4 text-terracotta"></i>
+              <span>Role-Based Access</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="file-text" class="w-4 h-4 text-terracotta"></i>
+              <span>Full Audit Logs</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="lock" class="w-4 h-4 text-terracotta"></i>
+              <span>Tenant-Isolated Data</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    </main>
+
+
+    <!-- 10. FOOTER (ALWAYS DARK) -->
+    <footer class="bg-[#0F0F12] text-[#FAFAFA] border-t border-white/10 pt-16 pb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+          
+          <!-- Column 1: Brand Info (Spans 2 cols) -->
+          <div class="lg:col-span-2 space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl bg-terracotta flex items-center justify-center text-white font-extrabold text-base">SM</div>
+              <span class="font-extrabold text-xl tracking-tight text-white">SafariMaster</span>
+            </div>
+            <p class="body-base text-zinc-400 max-w-sm">
+              The premier tour operations platform engineered for safari operators and destination management companies across East Africa and beyond.
+            </p>
+            <div class="pt-2 flex items-center gap-3 text-zinc-400">
+              <a href="#" aria-label="Twitter" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 hover:text-white transition-colors">
+                <i data-lucide="twitter" class="w-4 h-4"></i>
+              </a>
+              <a href="#" aria-label="LinkedIn" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 hover:text-white transition-colors">
+                <i data-lucide="linkedin" class="w-4 h-4"></i>
+              </a>
+              <a href="#" aria-label="Facebook" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 hover:text-white transition-colors">
+                <i data-lucide="facebook" class="w-4 h-4"></i>
+              </a>
+              <a href="#" aria-label="Instagram" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 hover:text-white transition-colors">
+                <i data-lucide="instagram" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2: Product Quick Links -->
+          <div class="space-y-3">
+            <h4 class="eyebrow text-terracotta">Product</h4>
+            <ul class="space-y-2 text-sm text-zinc-400">
+              <li><a href="#pipeline" class="hover:text-white transition-colors">Quote To Invoice</a></li>
+              <li><a href="#pipeline" class="hover:text-white transition-colors">Reservations & Vouchers</a></li>
+              <li><a href="#finance" class="hover:text-white transition-colors">Payments & Receipts</a></li>
+              <li><a href="#finance" class="hover:text-white transition-colors">Profit Analysis</a></li>
+              <li><a href="#governance" class="hover:text-white transition-colors">Multi-Tenant Governance</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Company -->
+          <div class="space-y-3">
+            <h4 class="eyebrow text-terracotta">Company</h4>
+            <ul class="space-y-2 text-sm text-zinc-400">
+              <li><a href="#product" class="hover:text-white transition-colors">About SafariMaster</a></li>
+              <li><a href="#governance" class="hover:text-white transition-colors">For DMCs</a></li>
+              <li><a href="#contact" class="hover:text-white transition-colors">Request Walkthrough</a></li>
+              <li><a href="#contact" class="hover:text-white transition-colors">Contact Support</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Legal & Security -->
+          <div class="space-y-3">
+            <h4 class="eyebrow text-terracotta">Legal</h4>
+            <ul class="space-y-2 text-sm text-zinc-400">
+              <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Tenant Data Security</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Audit & Compliance</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Copyright Row -->
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
+          <p>© 2026 SafariMaster. All rights reserved.</p>
+          <p class="flex items-center gap-1">
+            <span>Powered by SafariMaster Tour Operations Platform</span>
+          </p>
+        </div>
+
+      </div>
+    </footer>
+
+
+    <!-- DEMO REQUEST MODAL -->
+    <div id="demo-modal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-md flex items-center justify-center p-4">
+      <div class="relative w-full max-w-lg bg-[var(--sm-surface)] border border-[var(--sm-border)] rounded-2xl p-6 sm:p-8 shadow-2xl">
+        
+        <button onclick="closeDemoModal()" aria-label="Close modal" class="absolute top-4 right-4 p-2 text-[var(--sm-text-muted)] hover:text-[var(--sm-text-primary)] transition-colors">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+
+        <div id="modal-form-view" class="space-y-5">
+          <div class="space-y-2">
+            <div class="eyebrow inline-flex items-center gap-2 px-3 py-1 rounded-full bg-terracotta/10 text-terracotta">
+              SCHEDULE A DEMO
+            </div>
+            <h3 class="h3-heading text-2xl text-[var(--sm-text-primary)]">Experience SafariMaster Live</h3>
+            <p class="body-base text-xs text-[var(--sm-text-secondary)]">
+              Fill out your details below and our safari operations specialist will prepare a customized walkthrough for your team.
+            </p>
+          </div>
+
+          <form id="demo-form" onsubmit="handleDemoSubmit(event)" class="space-y-4">
+            <div>
+              <label class="block text-xs font-semibold text-[var(--sm-text-primary)] mb-1">Your Full Name</label>
+              <input type="text" required placeholder="Jane Doe" class="w-full px-3.5 py-2.5 rounded-xl bg-[var(--sm-bg)] border border-[var(--sm-border)] text-sm text-[var(--sm-text-primary)] focus:outline-none focus:border-terracotta" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-[var(--sm-text-primary)] mb-1">Tour / DMC Company Name</label>
+              <input type="text" required placeholder="Serengeti Expeditions Ltd." class="w-full px-3.5 py-2.5 rounded-xl bg-[var(--sm-bg)] border border-[var(--sm-border)] text-sm text-[var(--sm-text-primary)] focus:outline-none focus:border-terracotta" />
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-semibold text-[var(--sm-text-primary)] mb-1">Work Email</label>
+                <input type="email" required placeholder="jane@serengeti.com" class="w-full px-3.5 py-2.5 rounded-xl bg-[var(--sm-bg)] border border-[var(--sm-border)] text-sm text-[var(--sm-text-primary)] focus:outline-none focus:border-terracotta" />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-[var(--sm-text-primary)] mb-1">Phone Number</label>
+                <input type="tel" required placeholder="+254 700 000 000" class="w-full px-3.5 py-2.5 rounded-xl bg-[var(--sm-bg)] border border-[var(--sm-border)] text-sm text-[var(--sm-text-primary)] focus:outline-none focus:border-terracotta" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-[var(--sm-text-primary)] mb-1">Annual Trip / Booking Volume</label>
+              <select class="w-full px-3.5 py-2.5 rounded-xl bg-[var(--sm-bg)] border border-[var(--sm-border)] text-sm text-[var(--sm-text-primary)] focus:outline-none focus:border-terracotta">
+                <option>10 - 50 safari trips per year</option>
+                <option>50 - 200 safari trips per year</option>
+                <option>200+ safari trips per year (Multi-vehicle DMC)</option>
+              </select>
+            </div>
+
+            <button type="submit" class="w-full py-3.5 rounded-xl bg-terracotta hover:bg-terracotta-hover text-white font-bold text-sm shadow-sm transition-all mt-2">
+              Book Walkthrough
+            </button>
+          </form>
+        </div>
+
+        <!-- Success State View -->
+        <div id="modal-success-view" class="hidden space-y-4 text-center py-6">
+          <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-500 flex items-center justify-center mx-auto">
+            <i data-lucide="check-circle-2" class="w-8 h-8"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-[var(--sm-text-primary)]">Demo Request Confirmed!</h3>
+          <p class="text-sm text-[var(--sm-text-secondary)] max-w-sm mx-auto">
+            Thank you for reaching out. A SafariMaster operations specialist will contact your team within 24 hours to schedule your personalized tour workspace walkthrough.
+          </p>
+          <button onclick="closeDemoModal()" class="px-6 py-2.5 rounded-xl bg-terracotta text-white font-semibold text-sm">
+            Close Window
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- JAVASCRIPT FOR INTERACTION, THEME TOGGLE, NAVBAR & MODAL -->
+    <script>
+      // 1. Initialize Lucide Icons
+      document.addEventListener('DOMContentLoaded', () => {
+        if (window.lucide) {
+          lucide.createIcons();
+        }
+      });
+
+      // 2. Light / Dark Mode Toggle Implementation
+      function updateAriaState(isLight) {
+        const btns = [document.getElementById('theme-toggle-btn'), document.getElementById('theme-toggle-mobile')];
+        btns.forEach(btn => {
+          if (btn) btn.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+        });
+      }
+
+      function setTheme(isLight) {
+        if (isLight) {
+          document.documentElement.classList.add('light');
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('sm-theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+          localStorage.setItem('sm-theme', 'dark');
+        }
+        updateAriaState(isLight);
+        if (window.lucide) {
+          lucide.createIcons();
+        }
+      }
+
+      const themeToggleBtn = document.getElementById('theme-toggle-btn');
+      const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+
+      function toggleTheme() {
+        const isLight = document.documentElement.classList.contains('light');
+        setTheme(!isLight);
+      }
+
+      if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
+      if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
+
+      // Sync initial ARIA state on page load
+      updateAriaState(document.documentElement.classList.contains('light'));
+
+      // 3. Navbar Sticky Backdrop Effect on Scroll
+      const header = document.getElementById('main-header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.classList.add('bg-[var(--sm-surface)]/90', 'backdrop-blur-md', 'border-b', 'border-[var(--sm-border)]', 'shadow-md');
+          header.classList.remove('py-4');
+          header.classList.add('py-2.5');
+        } else {
+          header.classList.remove('bg-[var(--sm-surface)]/90', 'backdrop-blur-md', 'border-b', 'border-[var(--sm-border)]', 'shadow-md');
+          header.classList.remove('py-2.5');
+          header.classList.add('py-4');
+        }
+      });
+
+      // 4. Mobile Drawer Toggle
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const closeDrawerBtn = document.getElementById('close-drawer-btn');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+      function openDrawer() {
+        mobileDrawer.classList.remove('hidden');
+        if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'true');
+      }
+
+      function closeDrawer() {
+        mobileDrawer.classList.add('hidden');
+        if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      }
+
+      if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openDrawer);
+      if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
+      mobileNavLinks.forEach(link => link.addEventListener('click', closeDrawer));
+
+      // 5. Demo Modal Handlers
+      const demoModal = document.getElementById('demo-modal');
+      const modalFormView = document.getElementById('modal-form-view');
+      const modalSuccessView = document.getElementById('modal-success-view');
+
+      function openDemoModal() {
+        modalFormView.classList.remove('hidden');
+        modalSuccessView.classList.add('hidden');
+        demoModal.classList.remove('hidden');
+      }
+
+      function closeDemoModal() {
+        demoModal.classList.add('hidden');
+      }
+
+      function handleDemoSubmit(event) {
+        event.preventDefault();
+        modalFormView.classList.add('hidden');
+        modalSuccessView.classList.remove('hidden');
+      }
+
+      // Close modal when pressing Escape or clicking backdrop
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !demoModal.classList.contains('hidden')) {
+          closeDemoModal();
+        }
+      });
+
+      demoModal.addEventListener('click', (e) => {
+        if (e.target === demoModal) {
+          closeDemoModal();
+        }
+      });
+
+      // 6. Desktop Mouse Parallax for Hero Glass Modules
+      (function setupHeroParallax() {
+        const isDesktop = window.matchMedia('(pointer: fine)').matches;
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const container = document.getElementById('hero-tile-container');
+        const tiles = document.querySelectorAll('.hero-parallax-tile');
+
+        if (!isDesktop || prefersReducedMotion || !container || !tiles.length) return;
+
+        let requestID = null;
+
+        function updateParallax(e) {
+          const rect = container.getBoundingClientRect();
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+
+          const offsetX = e.clientX - centerX;
+          const offsetY = e.clientY - centerY;
+
+          tiles.forEach(tile => {
+            const depth = parseFloat(tile.getAttribute('data-depth') || '0.05');
+            // Opposite shift relative to mouse
+            const moveX = -(offsetX * depth);
+            const moveY = -(offsetY * depth);
+
+            tile.style.setProperty('--px', `${moveX.toFixed(2)}px`);
+            tile.style.setProperty('--py', `${moveY.toFixed(2)}px`);
+          });
+        }
+
+        window.addEventListener('mousemove', (e) => {
+          if (requestID) cancelAnimationFrame(requestID);
+          requestID = requestAnimationFrame(() => updateParallax(e));
+        });
+
+        container.addEventListener('mouseleave', () => {
+          tiles.forEach(tile => {
+            tile.style.setProperty('--px', '0px');
+            tile.style.setProperty('--py', '0px');
+          });
+        });
+      })();
+
+      // 7. Operations Pipeline Draw-in & Traveling Glow Dot Loop
+      (function setupPipelineAnimation() {
+        const pipelineSection = document.getElementById('pipeline');
+        const svgLine = document.getElementById('pipeline-svg-line');
+        const glowDot = document.getElementById('pipeline-glow-dot');
+        const verticalLine = document.getElementById('pipeline-vertical-line');
+        const verticalDot = document.getElementById('pipeline-vertical-dot');
+
+        if (!pipelineSection) return;
+
+        let animated = false;
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && !animated) {
+              animated = true;
+
+              // 1. Desktop Horizontal Line Animation
+              if (svgLine) {
+                svgLine.style.strokeDashoffset = '0';
+                
+                // After line draw completes (~1.1s), start traveling glow dot
+                setTimeout(() => {
+                  if (glowDot) {
+                    glowDot.style.opacity = '1';
+                    let progress = 0;
+                    function moveDot() {
+                      progress = (progress + 0.3) % 100;
+                      glowDot.style.left = `${progress}%`;
+                      requestAnimationFrame(moveDot);
+                    }
+                    moveDot();
+                  }
+                }, 1100);
+              }
+
+              // 2. Mobile Vertical Line Animation
+              if (verticalLine) {
+                verticalLine.style.height = '100%';
+
+                setTimeout(() => {
+                  if (verticalDot) {
+                    verticalDot.style.opacity = '1';
+                    let vProgress = 0;
+                    function moveVerticalDot() {
+                      vProgress = (vProgress + 0.3) % 100;
+                      verticalDot.style.top = `${vProgress}%`;
+                      requestAnimationFrame(moveVerticalDot);
+                    }
+                    moveVerticalDot();
+                  }
+                }, 1100);
+              }
+            }
+          });
+        }, { threshold: 0.2 });
+
+        observer.observe(pipelineSection);
+      })();
+
+      // 8. Finance Reconciliation Ring Animation on Scroll
+      (function setupReconcileRingAnimation() {
+        const financeSection = document.getElementById('finance');
+        const reconcileRing = document.getElementById('reconcile-ring');
+        const scoreText = document.getElementById('reconcile-score-text');
+
+        if (!financeSection || !reconcileRing) return;
+
+        let ringAnimated = false;
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && !ringAnimated) {
+              ringAnimated = true;
+              
+              // Animate ring filling up to 98%
+              reconcileRing.setAttribute('stroke-dasharray', '98, 100');
+
+              // Animate text counter from 0 to 98%
+              let count = 0;
+              const duration = 1000;
+              const interval = 20;
+              const steps = duration / interval;
+              const increment = 98 / steps;
+
+              const counterTimer = setInterval(() => {
+                count += increment;
+                if (count >= 98) {
+                  count = 98;
+                  clearInterval(counterTimer);
+                }
+                if (scoreText) scoreText.textContent = `${Math.round(count)}%`;
+              }, interval);
+            }
+          });
+        }, { threshold: 0.2 });
+
+        observer.observe(financeSection);
+      })();
+    </script>
+  </body>
+</html>

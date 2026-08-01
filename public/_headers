@@ -1,0 +1,17 @@
+# Cloudflare Edge Security & Cache Headers for SafariMaster
+
+# Default headers for all routes
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Cache static assets immutably for 1 year
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Document root caching strategy
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate

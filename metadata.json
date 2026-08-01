@@ -1,0 +1,6 @@
+{
+  "name": "SafariMaster",
+  "description": "Tour operations platform for safari operators and destination management companies.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
